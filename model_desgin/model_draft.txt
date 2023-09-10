@@ -1,0 +1,65 @@
+# airline_reviews_database（ARL_REV_DB）
+
+
+
+## PASSENGER（PSG）
+    <was on>（FLT）FLIGHT（N:1）<served>
+
+PK：PSG_ID（编）==string==8
+    PSG_GENDER（编）==string==4or6
+    PSG_AGE（编）==int8
+    PSG_VERIFIED==bool
+    PSG_TYPE==string<=256
+    PSG_SEAT_TYPE==string<=256
+    PSG_FLT_TAG（FK）{
+        PSG_FLT_ARL_NAME
+        PSG_FLT_ROUTE
+        PSG_FLT_DATE
+    }
+
+
+
+## REVIEW（REV）
+    <was posted by>（PSG）PASSENGER（1:1）<posted>
+    <was related to>（FLT）FLIGHT（N:1）<got>
+
+PK：REV_ID（转）==string==10
+    REV_DATE==date（转）
+    REV_TITLE==string<=256
+    REV_CONTENT==string<=65536（2e16）
+    REV_RATING {
+        REV_OVERALL==int8
+        REV_SEAT_COMFORT==int8
+        REV_CABIN_STAFF_SERVICE==int8
+        REV_FOOD_BEVERAGE==int8
+        REV_GROUND_SERVICE==int8
+        REV_INFLIGHT_ENTERTAINMENT==int8
+        REV_WIFI_CONNECTIVITY==int8
+        REV_VALUE_FOR_MONEY==int8
+    }
+    REV_RECOMMENDED==bool（转）
+    REV_PSG_ID（FK）
+    REV_FLT_TAG（FK）{
+        REV_FLT_ARL_NAME
+        REV_FLT_ROUTE
+        REV_FLT_DATE
+    }
+
+
+
+## FLIGHT（FLT）
+    <was conducted by>（ARL）AIRLINE（N:1）<conducted>
+
+PK：FLT_TAG {
+        FLT_ARL_NAME（FK）
+        FLT_ROUTE==string<=256
+        FLT_DATE==date（转）
+    }
+    FLT_AIRCRAFT==string<=256
+
+
+
+## AIRLINE（ARL）
+
+PK：ARL_NAME==string<=256
+    ARL_NATION（编）==string<=256
