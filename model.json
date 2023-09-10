@@ -4,7 +4,221 @@
         {
             "collectionName": "review",
             "type": "object",
-            "properties": [],
+            "properties": [
+                {
+                    "name": "review_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "160a877e-4270-444c-bc67-b328c3c26b0f",
+                    "code": "REV_ID",
+                    "required": true,
+                    "primaryKey": true,
+                    "error": {}
+                },
+                {
+                    "name": "review_date",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "7a589a9d-6f2e-4e2e-8a6c-4aeecefed5ee",
+                    "code": "REV_DATE",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "review_title",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "5bae57d4-35db-4f0e-89d9-1d9ea4aa2b27",
+                    "code": "REV_TITLE",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "review_content",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "0ff31020-acd5-460c-96fb-d7d0ba7f0963",
+                    "code": "REV_CONTENT",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "review_rating",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "review_overall",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "c10cbd3d-059c-4a45-9f69-39a741460b04",
+                            "code": "REV_OVERALL",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_seat_comfort",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "8d9f8d2c-60ab-4f3e-857a-ace9446d9eec",
+                            "code": "REV_SEAT_COMFORT",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_cabin_staff_service",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "aaf74e10-9504-4042-a7f7-8e6e7e1b5cfc",
+                            "code": "REV_CABIN_STAFF_SERVICE",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_food_beverage",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "d30010fe-6a3a-4cee-bc90-3927386608e5",
+                            "code": "REV_FOOD_BEVERAGE",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_ground_service",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "e9ffad8a-538a-4696-b49c-c1fc3f383df2",
+                            "code": "REV_GROUND_SERVICE",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_inflight_entertainment",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "7ad5fee2-8a18-40b4-9d7c-3dd572d1af31",
+                            "code": "REV_INFLIGHT_ENTERTAINMENT",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_wifi_connectivity",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "10d06aa6-6884-41f5-813b-17189f826de8",
+                            "code": "REV_WIFI_CONNECTIVITY",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_value_for_money",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "cb8cd20e-aae6-4e00-8f8d-a73ae9f67cd6",
+                            "code": "REV_VALUE_FOR_MONEY",
+                            "required": true,
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "b47e8ee4-f8c1-4f3e-9d3b-dc8a09742e70",
+                    "code": "REV_RATING",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "review_recommended",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "boolean",
+                    "GUID": "7f01c950-9bd1-4125-9532-143b7b4ecb86",
+                    "code": "REV_RECOMMENDED",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "review_passenger_id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "c8e4f35b-d842-4cc2-8bcb-bdc0f2529f64",
+                    "code": "REV_PSG_ID",
+                    "foreignCollection": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                    "foreignField": [
+                        "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                        "abaae72b-b600-4090-bbc1-cab2a13bc9ab"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "ae78665a-fa1e-489c-a75a-f3383d24a581",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "review_flight_tag",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "review_flight_airline_name",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "b9c8b6f4-f363-4bf3-81f6-1ac3192d9ef1",
+                            "code": "REV_FLT_ARL_NAME",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_flight_route",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "2f1a06a7-ac9d-4a31-9c1c-1d5eae2a00bb",
+                            "code": "REV_FLT_NAME",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "review_flight_date",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "date",
+                            "primaryKey": false,
+                            "GUID": "f3453758-1a7c-4a54-a8ed-b5eeab494ea8",
+                            "code": "REV_FLT_DATE",
+                            "required": true,
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "ab6d4f45-d1f2-455c-ba83-0e4ad829d556",
+                    "code": "REV_FLT_TAG",
+                    "foreignCollection": "214fb2fd-d34e-48be-88be-2296b0113f42",
+                    "foreignField": [
+                        "214fb2fd-d34e-48be-88be-2296b0113f42",
+                        "d2baf92d-d7ea-423c-9e53-9049ef5e26a4"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "6617e32f-2975-45b4-af71-a0593cdd4e4c",
+                    "required": true,
+                    "error": {}
+                }
+            ],
             "definitions": {
                 "type": "definitions",
                 "properties": [],
@@ -42,7 +256,10 @@
                     "code": "PSG_ID",
                     "primaryKey": true,
                     "required": true,
-                    "error": {}
+                    "error": {},
+                    "childRelationships": [
+                        "ae78665a-fa1e-489c-a75a-f3383d24a581"
+                    ]
                 },
                 {
                     "name": "passenger_gender",
@@ -50,11 +267,9 @@
                     "isActivated": true,
                     "type": "string",
                     "GUID": "69238fc3-ea79-4c36-bbbc-5f1d0f652f24",
-                    "error": {
-                        "name": false,
-                        "code": false
-                    },
-                    "code": "PSG_GENDER"
+                    "code": "PSG_GENDER",
+                    "required": true,
+                    "error": {}
                 },
                 {
                     "name": "passenger_age",
@@ -62,11 +277,9 @@
                     "isActivated": true,
                     "type": "numeric",
                     "GUID": "61924c5e-94b0-4003-acc7-14b7a033aaca",
-                    "error": {
-                        "name": false,
-                        "code": false
-                    },
-                    "code": "PSG_AGE"
+                    "code": "PSG_AGE",
+                    "required": true,
+                    "error": {}
                 },
                 {
                     "hackoladeMeta": {},
@@ -74,11 +287,9 @@
                     "type": "boolean",
                     "GUID": "b9963b10-dfa8-4d0b-b576-68d3f4565ff2",
                     "name": "passenger_verified",
-                    "error": {
-                        "name": false,
-                        "code": false
-                    },
-                    "code": "PSG_VERIFIED"
+                    "code": "PSG_VERIFIED",
+                    "required": true,
+                    "error": {}
                 },
                 {
                     "name": "passenger_type",
@@ -86,11 +297,9 @@
                     "isActivated": true,
                     "type": "string",
                     "GUID": "e35f28c5-28c8-43cd-afb7-86482373ed1f",
-                    "error": {
-                        "name": false,
-                        "code": false
-                    },
-                    "code": "PSG_TYPE"
+                    "code": "PSG_TYPE",
+                    "required": true,
+                    "error": {}
                 },
                 {
                     "name": "passenger_seat_type",
@@ -98,11 +307,9 @@
                     "isActivated": true,
                     "type": "string",
                     "GUID": "78dafdbd-9759-4fa8-ab34-920b0bbee7b7",
-                    "error": {
-                        "name": false,
-                        "code": false
-                    },
-                    "code": "PSG_SEAT_TYPE"
+                    "code": "PSG_SEAT_TYPE",
+                    "required": true,
+                    "error": {}
                 },
                 {
                     "name": "passenger_flight_tag",
@@ -116,11 +323,9 @@
                             "isActivated": true,
                             "type": "string",
                             "GUID": "9ad284e6-c034-48fe-973b-4a76576a35bb",
-                            "error": {
-                                "name": false,
-                                "code": false
-                            },
-                            "code": "PSG_FLT_ARL_NAME"
+                            "code": "PSG_FLT_ARL_NAME",
+                            "required": true,
+                            "error": {}
                         },
                         {
                             "name": "passenger_flight_route",
@@ -128,11 +333,9 @@
                             "isActivated": true,
                             "type": "string",
                             "GUID": "de8dd322-40c1-4b16-b24a-1a953f98a8a9",
-                            "error": {
-                                "name": false,
-                                "code": false
-                            },
-                            "code": "PSG_FLT_ROUTE"
+                            "code": "PSG_FLT_ROUTE",
+                            "required": true,
+                            "error": {}
                         },
                         {
                             "name": "passenger_flight_date",
@@ -142,6 +345,7 @@
                             "primaryKey": false,
                             "GUID": "a463bf0b-7aed-4c3d-b1db-7cbf45ccbcb1",
                             "code": "PSG_FLT_DATE",
+                            "required": true,
                             "error": {}
                         }
                     ],
@@ -155,6 +359,7 @@
                     ],
                     "relationshipType": "Foreign Key",
                     "parentRelationship": "090af4b2-68cb-42fd-a51a-26ae792c10ef",
+                    "required": true,
                     "error": {}
                 }
             ],
@@ -241,7 +446,8 @@
                     "primaryKey": true,
                     "error": {},
                     "childRelationships": [
-                        "090af4b2-68cb-42fd-a51a-26ae792c10ef"
+                        "090af4b2-68cb-42fd-a51a-26ae792c10ef",
+                        "6617e32f-2975-45b4-af71-a0593cdd4e4c"
                     ]
                 },
                 {
@@ -251,6 +457,7 @@
                     "type": "string",
                     "GUID": "b1a237c2-503b-474b-86b2-a10a95004352",
                     "code": "FLT_AIRCRAFT",
+                    "required": true,
                     "error": {}
                 }
             ],
@@ -299,11 +506,9 @@
                     "isActivated": true,
                     "type": "string",
                     "GUID": "5f3dcca9-26ec-41b5-a01a-003492ee0a96",
-                    "error": {
-                        "name": false,
-                        "code": false
-                    },
-                    "code": "ARL_NATION"
+                    "code": "ARL_NATION",
+                    "required": true,
+                    "error": {}
                 }
             ],
             "definitions": {
@@ -357,91 +562,7 @@
     "views": [],
     "relationships": [
         {
-            "name": "was posted by",
-            "relationshipType": "Foreign Key",
-            "parentField": [],
-            "parentCardinality": "1",
-            "childField": [],
-            "isActivated": true,
-            "childCardinality": "1",
-            "GUID": "0d8b49e7-8a82-4231-9153-427ff894d9c5",
-            "parentCollection": "45087367-8136-4936-bada-e5eab3a546a2",
-            "childCollection": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
-            "hackoladeStyles": {
-                "GUID": "741d6403-c3b6-47ca-ba4e-7133e1bc58ad",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#fec107",
-                "dataType": "",
-                "shape": [
-                    {
-                        "x": 1315.3333333333335,
-                        "y": 1210.333333333332
-                    },
-                    {
-                        "x": 1362.1666666666667,
-                        "y": 1210.333333333332
-                    },
-                    {
-                        "x": 1362.1666666666667,
-                        "y": 1076.1666666666656
-                    },
-                    {
-                        "x": 1409,
-                        "y": 1076.1666666666656
-                    }
-                ],
-                "sides": [
-                    "right",
-                    "left"
-                ]
-            }
-        },
-        {
-            "name": "was related to",
-            "relationshipType": "Foreign Key",
-            "parentField": [],
-            "parentCardinality": "n",
-            "childField": [],
-            "isActivated": true,
-            "childCardinality": "1",
-            "GUID": "c47537fe-a28f-4c03-aa55-b25b58bc5e7a",
-            "parentCollection": "45087367-8136-4936-bada-e5eab3a546a2",
-            "childCollection": "214fb2fd-d34e-48be-88be-2296b0113f42",
-            "hackoladeStyles": {
-                "GUID": "ddef988c-5eb1-49c2-b70e-4abe09bb1b9d",
-                "autoPositioning": true,
-                "type": "Orthogonal",
-                "thickness": 2,
-                "color": "#fec107",
-                "dataType": "",
-                "shape": [
-                    {
-                        "x": 1559.6666666666665,
-                        "y": 1316.9999999999989
-                    },
-                    {
-                        "x": 1559.6666666666665,
-                        "y": 1215.3333333333321
-                    },
-                    {
-                        "x": 1513,
-                        "y": 1215.3333333333321
-                    },
-                    {
-                        "x": 1513,
-                        "y": 1113.6666666666656
-                    }
-                ],
-                "sides": [
-                    "top",
-                    "bottom"
-                ]
-            }
-        },
-        {
-            "name": "fk FLT.FLT_TAG.FLT_ARL_NAME to ARL.ARL_NAME",
+            "name": "conducted",
             "relationshipType": "Foreign Key",
             "parentField": [
                 [
@@ -467,35 +588,35 @@
                 "autoPositioning": true,
                 "type": "Orthogonal",
                 "thickness": 2,
-                "color": "#79c4ff",
+                "color": "#fec107",
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1420.6666666666665,
-                        "y": 1398.9999999999989
+                        "x": 1005.366800513762,
+                        "y": 1958.8976583964504
                     },
                     {
-                        "x": 1319.333333333334,
-                        "y": 1398.9999999999989
+                        "x": 1005.366800513762,
+                        "y": 2028.3396335868472
                     },
                     {
-                        "x": 1319.333333333334,
-                        "y": 1486.8333333333323
+                        "x": 747.8383883298287,
+                        "y": 2028.3396335868472
                     },
                     {
-                        "x": 1218.0000000000014,
-                        "y": 1486.8333333333323
+                        "x": 747.8383883298287,
+                        "y": 2097.781608777244
                     }
                 ],
                 "sides": [
-                    "left",
-                    "right"
+                    "bottom",
+                    "top"
                 ]
             },
-            "description": "conducted"
+            "description": "fk FLT.FLT_TAG.FLT_ARL_NAME to ARL.ARL_NAME"
         },
         {
-            "name": "fk PSG.PSG_FLT_TAG to FLT.FLT_TAG",
+            "name": "served",
             "relationshipType": "Foreign Key",
             "parentField": [
                 [
@@ -520,31 +641,138 @@
                 "autoPositioning": true,
                 "type": "Orthogonal",
                 "thickness": 2,
-                "color": "#79c4ff",
+                "color": "#fec107",
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1315.3333333333335,
-                        "y": 1281.333333333332
+                        "x": 1320.766967024488,
+                        "y": 1914.9006680220368
                     },
                     {
-                        "x": 1368,
-                        "y": 1281.333333333332
+                        "x": 1232.566883769125,
+                        "y": 1914.9006680220368
                     },
                     {
-                        "x": 1368,
-                        "y": 1357.9999999999989
+                        "x": 1232.566883769125,
+                        "y": 1910.3500509745754
                     },
                     {
-                        "x": 1420.6666666666665,
-                        "y": 1357.9999999999989
+                        "x": 1144.366800513762,
+                        "y": 1910.3500509745754
                     }
                 ],
                 "sides": [
-                    "right",
-                    "left"
+                    "left",
+                    "right"
                 ]
-            }
+            },
+            "description": "fk PSG.PSG_FLT_TAG to FLT.FLT_TAG"
+        },
+        {
+            "name": "posted",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                    "abaae72b-b600-4090-bbc1-cab2a13bc9ab"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "45087367-8136-4936-bada-e5eab3a546a2",
+                    "c8e4f35b-d842-4cc2-8bcb-bdc0f2529f64"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "ae78665a-fa1e-489c-a75a-f3383d24a581",
+            "parentCollection": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+            "childCollection": "45087367-8136-4936-bada-e5eab3a546a2",
+            "hackoladeStyles": {
+                "GUID": "e52a10b6-cc91-42b3-bf0c-3d085453d8a5",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#fec107",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1320.9891893526797,
+                        "y": 1652.267397063435
+                    },
+                    {
+                        "x": 1320.9891893526797,
+                        "y": 1723.8578362536734
+                    },
+                    {
+                        "x": 1491.266967024488,
+                        "y": 1723.8578362536734
+                    },
+                    {
+                        "x": 1491.266967024488,
+                        "y": 1795.4482754439118
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            },
+            "description": "fk REV.REV_PSG_ID to PSG.PSG_ID"
+        },
+        {
+            "name": "got",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "214fb2fd-d34e-48be-88be-2296b0113f42",
+                    "d2baf92d-d7ea-423c-9e53-9049ef5e26a4"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "45087367-8136-4936-bada-e5eab3a546a2",
+                    "ab6d4f45-d1f2-455c-ba83-0e4ad829d556"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "n",
+            "GUID": "6617e32f-2975-45b4-af71-a0593cdd4e4c",
+            "parentCollection": "214fb2fd-d34e-48be-88be-2296b0113f42",
+            "childCollection": "45087367-8136-4936-bada-e5eab3a546a2",
+            "hackoladeStyles": {
+                "GUID": "d9f781d3-28f2-4f06-9811-2a7e639af24f",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#fec107",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1208.3225226860131,
+                        "y": 1652.267397063435
+                    },
+                    {
+                        "x": 1208.3225226860131,
+                        "y": 1744.0825277299427
+                    },
+                    {
+                        "x": 1005.366800513762,
+                        "y": 1744.0825277299427
+                    },
+                    {
+                        "x": 1005.366800513762,
+                        "y": 1835.8976583964504
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            },
+            "description": "fk REV.REV_FLT_TAG to FLT.FLT_TAG"
         }
     ],
     "users": [],
@@ -555,8 +783,6 @@
         "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4": "passenger",
         "214fb2fd-d34e-48be-88be-2296b0113f42": "flight",
         "aec136b3-ca22-414e-95b1-966a24f70089": "airline",
-        "c47537fe-a28f-4c03-aa55-b25b58bc5e7a": "was related to",
-        "0d8b49e7-8a82-4231-9153-427ff894d9c5": "was posted by",
         "abaae72b-b600-4090-bbc1-cab2a13bc9ab": "passenger_id",
         "69238fc3-ea79-4c36-bbbc-5f1d0f652f24": "passenger_gender",
         "61924c5e-94b0-4003-acc7-14b7a033aaca": "passenger_age",
@@ -573,9 +799,30 @@
         "9f91e176-e92f-4952-bf63-449f33a1e84d": "flight_airline_name",
         "c340df22-d0ce-46a0-a3c7-c2047548b8b6": "flight_route",
         "c0db4f58-af2e-40e3-b4f4-63b65f9a4b75": "flight_date",
-        "fd88199c-5b99-4f76-9c1b-56254643f49b": "fk FLT.FLT_TAG.FLT_ARL_NAME to ARL.ARL_NAME",
+        "fd88199c-5b99-4f76-9c1b-56254643f49b": "conducted",
         "b1a237c2-503b-474b-86b2-a10a95004352": "flight_aircraft",
-        "090af4b2-68cb-42fd-a51a-26ae792c10ef": "fk PSG.PSG_FLT_TAG to FLT.FLT_TAG"
+        "090af4b2-68cb-42fd-a51a-26ae792c10ef": "served",
+        "160a877e-4270-444c-bc67-b328c3c26b0f": "review_id",
+        "7a589a9d-6f2e-4e2e-8a6c-4aeecefed5ee": "review_date",
+        "5bae57d4-35db-4f0e-89d9-1d9ea4aa2b27": "review_title",
+        "0ff31020-acd5-460c-96fb-d7d0ba7f0963": "review_content",
+        "b47e8ee4-f8c1-4f3e-9d3b-dc8a09742e70": "review_rating",
+        "c10cbd3d-059c-4a45-9f69-39a741460b04": "review_overall",
+        "7f01c950-9bd1-4125-9532-143b7b4ecb86": "review_recommended",
+        "c8e4f35b-d842-4cc2-8bcb-bdc0f2529f64": "review_passenger_id",
+        "ae78665a-fa1e-489c-a75a-f3383d24a581": "posted",
+        "ab6d4f45-d1f2-455c-ba83-0e4ad829d556": "review_flight_tag",
+        "b9c8b6f4-f363-4bf3-81f6-1ac3192d9ef1": "review_flight_airline_name",
+        "2f1a06a7-ac9d-4a31-9c1c-1d5eae2a00bb": "review_flight_route",
+        "f3453758-1a7c-4a54-a8ed-b5eeab494ea8": "review_flight_date",
+        "6617e32f-2975-45b4-af71-a0593cdd4e4c": "got",
+        "8d9f8d2c-60ab-4f3e-857a-ace9446d9eec": "review_seat_comfort",
+        "aaf74e10-9504-4042-a7f7-8e6e7e1b5cfc": "review_cabin_staff_service",
+        "d30010fe-6a3a-4cee-bc90-3927386608e5": "review_food_beverage",
+        "e9ffad8a-538a-4696-b49c-c1fc3f383df2": "review_ground_service",
+        "7ad5fee2-8a18-40b4-9d7c-3dd572d1af31": "review_inflight_entertainment",
+        "10d06aa6-6884-41f5-813b-17189f826de8": "review_wifi_connectivity",
+        "cb8cd20e-aae6-4e00-8f8d-a73ae9f67cd6": "review_value_for_money"
     },
     "definitions": {
         "type": "definitions",
@@ -600,7 +847,7 @@
     "creationTS": "2023-09-10T02:17:10.515Z",
     "GUID": "576fc196-a886-4a02-8d9b-b39e0a9593e3",
     "isLineageEnabled": false,
-    "lastModifTS": "2023-09-10T04:07:58.189Z",
+    "lastModifTS": "2023-09-10T08:20:06.155Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
@@ -609,25 +856,26 @@
     "applicationInformation": {
         "version": "6.10.19"
     },
+    "hackoladeMeta": {},
     "settings": {
         "centralPane": {
             "dbLevel": {
                 "erd": [
                     {
                         "GUID": "45087367-8136-4936-bada-e5eab3a546a2",
-                        "x": 1409,
-                        "y": 1038.6666666666656,
-                        "width": 208,
-                        "height": 75,
+                        "x": 1095.6558560193464,
+                        "y": 1277.267397063435,
+                        "width": 338,
+                        "height": 375,
                         "color": {
                             "hex": "#a4c400"
                         }
                     },
                     {
                         "GUID": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
-                        "x": 975.3333333333334,
-                        "y": 1139.333333333332,
-                        "width": 340,
+                        "x": 1320.766967024488,
+                        "y": 1795.4482754439118,
+                        "width": 341,
                         "height": 213,
                         "color": {
                             "hex": "#a4c400"
@@ -635,8 +883,8 @@
                     },
                     {
                         "GUID": "214fb2fd-d34e-48be-88be-2296b0113f42",
-                        "x": 1420.6666666666665,
-                        "y": 1316.9999999999989,
+                        "x": 866.366800513762,
+                        "y": 1835.8976583964504,
                         "width": 278,
                         "height": 123,
                         "color": {
@@ -645,8 +893,8 @@
                     },
                     {
                         "GUID": "aec136b3-ca22-414e-95b1-966a24f70089",
-                        "x": 999.0000000000014,
-                        "y": 1452.3333333333323,
+                        "x": 638.3383883298287,
+                        "y": 2097.781608777244,
                         "width": 219,
                         "height": 69,
                         "color": {
@@ -662,8 +910,8 @@
                 },
                 "buckets": [
                     {
-                        "x": 935.3333333333334,
-                        "y": 998.6666666666656,
+                        "x": 598.3383883298287,
+                        "y": 1237.267397063435,
                         "GUID": "f4a0c9ce-c864-490f-8141-93fed5877458"
                     }
                 ],
@@ -692,8 +940,8 @@
                         "GUID": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4"
                     },
                     {
-                        "autoWidth": false,
-                        "autoHeight": false,
+                        "autoWidth": true,
+                        "autoHeight": true,
                         "GUID": "45087367-8136-4936-bada-e5eab3a546a2"
                     },
                     {
@@ -707,7 +955,10 @@
                         "GUID": "aec136b3-ca22-414e-95b1-966a24f70089"
                     }
                 ],
-                "relationshipUpdateDisabled": false
+                "relationshipUpdateDisabled": false,
+                "displayOptions": {
+                    "hideErdRelationshipsNames": false
+                }
             },
             "collectionLevel": {},
             "changed": false
