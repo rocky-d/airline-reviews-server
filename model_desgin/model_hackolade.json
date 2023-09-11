@@ -327,7 +327,7 @@
                     "error": {}
                 },
                 {
-                    "name": "passenger type",
+                    "name": "passenger type of traveler",
                     "hackoladeMeta": {},
                     "isActivated": true,
                     "type": "string",
@@ -822,19 +822,19 @@
                 "dataType": "",
                 "shape": [
                     {
-                        "x": 1046.80644060278,
+                        "x": 991.1397739361133,
                         "y": 1561.5291704352587
                     },
                     {
-                        "x": 1046.80644060278,
+                        "x": 991.1397739361133,
                         "y": 1621.3800810825212
                     },
                     {
-                        "x": 842.7613433204568,
+                        "x": 793.9280099871235,
                         "y": 1621.3800810825212
                     },
                     {
-                        "x": 842.7613433204568,
+                        "x": 793.9280099871235,
                         "y": 1681.2309917297837
                     }
                 ],
@@ -858,7 +858,7 @@
         "69238fc3-ea79-4c36-bbbc-5f1d0f652f24": "passenger gender",
         "61924c5e-94b0-4003-acc7-14b7a033aaca": "passenger age",
         "b9963b10-dfa8-4d0b-b576-68d3f4565ff2": "passenger verified",
-        "e35f28c5-28c8-43cd-afb7-86482373ed1f": "passenger type",
+        "e35f28c5-28c8-43cd-afb7-86482373ed1f": "passenger type of traveler",
         "78dafdbd-9759-4fa8-ab34-920b0bbee7b7": "passenger seat type",
         "56346b73-d015-4c2e-bc82-66b3268c626b": "passenger flight tag",
         "9ad284e6-c034-48fe-973b-4a76576a35bb": "passenger flight airline iata code",
@@ -920,7 +920,7 @@
     "creationTS": "2023-09-10T02:17:10.515Z",
     "GUID": "576fc196-a886-4a02-8d9b-b39e0a9593e3",
     "isLineageEnabled": false,
-    "lastModifTS": "2023-09-10T10:57:52.394Z",
+    "lastModifTS": "2023-09-11T01:19:17.859Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
