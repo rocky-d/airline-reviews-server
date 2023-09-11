@@ -19,15 +19,17 @@
                     "error": {}
                 },
                 {
-                    "name": "review date",
+                    "name": "review recommended",
                     "hackoladeMeta": {},
                     "isActivated": true,
-                    "type": "date",
-                    "primaryKey": false,
-                    "GUID": "7a589a9d-6f2e-4e2e-8a6c-4aeecefed5ee",
-                    "code": "REV_DATE",
+                    "type": "boolean",
+                    "GUID": "7f01c950-9bd1-4125-9532-143b7b4ecb86",
+                    "code": "REV_RECOMMENDED",
                     "required": true,
-                    "error": {}
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
                 },
                 {
                     "name": "review title",
@@ -52,6 +54,20 @@
                     "minLength": 0,
                     "maxLength": 65536,
                     "error": {}
+                },
+                {
+                    "name": "review date",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "7a589a9d-6f2e-4e2e-8a6c-4aeecefed5ee",
+                    "code": "REV_DATE",
+                    "required": true,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
                 },
                 {
                     "name": "review rating",
@@ -160,16 +176,6 @@
                         "name": false,
                         "code": false
                     }
-                },
-                {
-                    "name": "review recommended",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "type": "boolean",
-                    "GUID": "7f01c950-9bd1-4125-9532-143b7b4ecb86",
-                    "code": "REV_RECOMMENDED",
-                    "required": true,
-                    "error": {}
                 },
                 {
                     "name": "review passenger id",
@@ -294,6 +300,29 @@
                     "error": {}
                 },
                 {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "boolean",
+                    "GUID": "b9963b10-dfa8-4d0b-b576-68d3f4565ff2",
+                    "name": "passenger verified",
+                    "code": "PSG_VERIFIED",
+                    "required": true,
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
+                },
+                {
+                    "name": "passenger age",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "61924c5e-94b0-4003-acc7-14b7a033aaca",
+                    "code": "PSG_AGE",
+                    "required": true,
+                    "error": {}
+                },
+                {
                     "name": "passenger gender",
                     "hackoladeMeta": {},
                     "isActivated": true,
@@ -307,27 +336,10 @@
                         "MALE",
                         "FEMALE"
                     ],
-                    "error": {}
-                },
-                {
-                    "name": "passenger age",
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "type": "numeric",
-                    "GUID": "61924c5e-94b0-4003-acc7-14b7a033aaca",
-                    "code": "PSG_AGE",
-                    "required": true,
-                    "error": {}
-                },
-                {
-                    "hackoladeMeta": {},
-                    "isActivated": true,
-                    "type": "boolean",
-                    "GUID": "b9963b10-dfa8-4d0b-b576-68d3f4565ff2",
-                    "name": "passenger verified",
-                    "code": "PSG_VERIFIED",
-                    "required": true,
-                    "error": {}
+                    "error": {
+                        "name": false,
+                        "code": false
+                    }
                 },
                 {
                     "name": "passenger type of traveler",
@@ -858,9 +870,7 @@
         "214fb2fd-d34e-48be-88be-2296b0113f42": "flight",
         "aec136b3-ca22-414e-95b1-966a24f70089": "airline",
         "abaae72b-b600-4090-bbc1-cab2a13bc9ab": "passenger id",
-        "69238fc3-ea79-4c36-bbbc-5f1d0f652f24": "passenger gender",
         "61924c5e-94b0-4003-acc7-14b7a033aaca": "passenger age",
-        "b9963b10-dfa8-4d0b-b576-68d3f4565ff2": "passenger verified",
         "e35f28c5-28c8-43cd-afb7-86482373ed1f": "passenger type of traveler",
         "78dafdbd-9759-4fa8-ab34-920b0bbee7b7": "passenger seat type",
         "56346b73-d015-4c2e-bc82-66b3268c626b": "passenger flight tag",
@@ -877,12 +887,10 @@
         "b1a237c2-503b-474b-86b2-a10a95004352": "flight aircraft",
         "090af4b2-68cb-42fd-a51a-26ae792c10ef": "served",
         "160a877e-4270-444c-bc67-b328c3c26b0f": "review id",
-        "7a589a9d-6f2e-4e2e-8a6c-4aeecefed5ee": "review date",
         "5bae57d4-35db-4f0e-89d9-1d9ea4aa2b27": "review title",
         "0ff31020-acd5-460c-96fb-d7d0ba7f0963": "review content",
         "b47e8ee4-f8c1-4f3e-9d3b-dc8a09742e70": "review rating",
         "c10cbd3d-059c-4a45-9f69-39a741460b04": "review overall",
-        "7f01c950-9bd1-4125-9532-143b7b4ecb86": "review recommended",
         "c8e4f35b-d842-4cc2-8bcb-bdc0f2529f64": "review passenger id",
         "ae78665a-fa1e-489c-a75a-f3383d24a581": "posted",
         "ab6d4f45-d1f2-455c-ba83-0e4ad829d556": "review flight tag",
@@ -898,7 +906,11 @@
         "10d06aa6-6884-41f5-813b-17189f826de8": "review wifi connectivity",
         "cb8cd20e-aae6-4e00-8f8d-a73ae9f67cd6": "review value for money",
         "7e97ed4b-5a66-412e-9047-a4fc299ff3fe": "airline name",
-        "c1608cf1-1aaf-40cf-84f5-65cc79ca9653": "airline icao code"
+        "c1608cf1-1aaf-40cf-84f5-65cc79ca9653": "airline icao code",
+        "b9963b10-dfa8-4d0b-b576-68d3f4565ff2": "passenger verified",
+        "69238fc3-ea79-4c36-bbbc-5f1d0f652f24": "passenger gender",
+        "7f01c950-9bd1-4125-9532-143b7b4ecb86": "review recommended",
+        "7a589a9d-6f2e-4e2e-8a6c-4aeecefed5ee": "review date"
     },
     "definitions": {
         "type": "definitions",
@@ -923,7 +935,7 @@
     "creationTS": "2023-09-10T02:17:10.515Z",
     "GUID": "576fc196-a886-4a02-8d9b-b39e0a9593e3",
     "isLineageEnabled": false,
-    "lastModifTS": "2023-09-11T03:51:46.580Z",
+    "lastModifTS": "2023-09-11T04:01:10.396Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
