@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>显示图片</title>
+</head>
+<body>
+    <h1>输入9个参数并显示图片</h1>
+
+    <form id="imageForm">
+        <label for="param1">参数1:</label>
+        <input type="text" id="param1" name="param1"><br>
+
+        <label for="param2">参数2:</label>
+        <input type="text" id="param2" name="param2"><br>
+
+        <label for="param3">参数3:</label>
+        <input type="text" id="param3" name="param3"><br>
+
+        <label for="param4">参数4:</label>
+        <input type="text" id="param4" name="param4"><br>
+
+        <label for="param5">参数5:</label>
+        <input type="text" id="param5" name="param5"><br>
+
+        <label for="param6">参数6:</label>
+        <input type="text" id="param6" name="param6"><br>
+
+        <label for="param7">参数7:</label>
+        <input type="text" id="param7" name="param7"><br>
+
+        <label for="param8">参数8:</label>
+        <input type="text" id="param8" name="param8"><br>
+
+        <label for="param9">参数9:</label>
+        <input type="text" id="param9" name="param9"><br>
+
+        <input type="button" value="显示图片" onclick="displayImage()">
+    </form>
+
+    <div id="imageContainer">
+        <!-- 图片将在这里显示 -->
+    </div>
+
+    <script>
+        function displayImage() {
+            // 获取输入的参数值
+            var param1 = document.getElementById("param1").value;
+            var param2 = document.getElementById("param2").value;
+            var param3 = document.getElementById("param3").value;
+            var param4 = document.getElementById("param4").value;
+            var param5 = document.getElementById("param5").value;
+            var param6 = document.getElementById("param6").value;
+            var param7 = document.getElementById("param7").value;
+            var param8 = document.getElementById("param8").value;
+            var param9 = document.getElementById("param9").value;
+
+            // 构建图片URL，这里使用了一个示例URL
+            var imageUrl = 'https://tse1-mm.cn.bing.net/th/id/OIP-C.sOomj6G-J50RJInOg61GlgHaEo?w=300&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7';
+
+            //var imageUrl;
+            fetch(imageUrl)
+                .then(response => response.blob())
+                .then(data => {
+                    // 创建图片元素并设置其属性
+                    var image = document.createElement("img");
+                    var imageUrl = URL.createObjectURL(data);
+                    image.src = imageUrl;
+                    image.alt = "显示的图片";
+
+                    // 将图片添加到页面中
+                    var imageContainer = document.getElementById("imageContainer");
+                    imageContainer.innerHTML = ""; // 清空容器
+                    imageContainer.appendChild(image);
+                    imageUrl = URL.createObjectURL(data);
+                    document.getElementById('imageContainer').src = imageUrl;
+            })
+            .catch(error => console.error('获取图片失败：', error));
+
+            {#// 创建图片元素并设置其属性#}
+            {#var image = document.createElement("img");#}
+            {#image.src = imageUrl;#}
+            {#image.alt = "显示的图片";#}
+            {##}
+            {#// 将图片添加到页面中#}
+            {#var imageContainer = document.getElementById("imageContainer");#}
+            {#imageContainer.innerHTML = ""; // 清空容器#}
+            {#imageContainer.appendChild(image);#}
+        }
+    </script>
+</body>
+</head>
