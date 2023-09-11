@@ -214,11 +214,14 @@
                             "isActivated": true,
                             "type": "string",
                             "GUID": "2f1a06a7-ac9d-4a31-9c1c-1d5eae2a00bb",
-                            "code": "REV_FLT_NAME",
+                            "code": "REV_FLT_ROUTE",
                             "required": true,
                             "minLength": 0,
                             "maxLength": 256,
-                            "error": {}
+                            "error": {
+                                "name": false,
+                                "code": false
+                            }
                         },
                         {
                             "name": "review flight date",
@@ -920,7 +923,7 @@
     "creationTS": "2023-09-10T02:17:10.515Z",
     "GUID": "576fc196-a886-4a02-8d9b-b39e0a9593e3",
     "isLineageEnabled": false,
-    "lastModifTS": "2023-09-11T01:19:17.859Z",
+    "lastModifTS": "2023-09-11T03:51:46.580Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
