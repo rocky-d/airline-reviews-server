@@ -1,0 +1,1030 @@
+{
+    "modelName": "New Model",
+    "collections": [
+        {
+            "collectionName": "review",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "review id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "code": "REV_ID",
+                    "required": false,
+                    "GUID": "160a877e-4270-444c-bc67-b328c3c26b0f",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "error": {}
+                },
+                {
+                    "name": "review recommended",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "boolean",
+                    "GUID": "7f01c950-9bd1-4125-9532-143b7b4ecb86",
+                    "code": "REV_RECOMMENDED",
+                    "required": false,
+                    "error": {}
+                },
+                {
+                    "name": "review title",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "5bae57d4-35db-4f0e-89d9-1d9ea4aa2b27",
+                    "code": "REV_TITLE",
+                    "required": false,
+                    "maxLength": 256,
+                    "minLength": 0,
+                    "error": {}
+                },
+                {
+                    "name": "review content",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "0ff31020-acd5-460c-96fb-d7d0ba7f0963",
+                    "code": "REV_CONTENT",
+                    "required": false,
+                    "minLength": 0,
+                    "maxLength": 65536,
+                    "error": {}
+                },
+                {
+                    "name": "review date",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "7a589a9d-6f2e-4e2e-8a6c-4aeecefed5ee",
+                    "code": "REV_DATE",
+                    "required": false,
+                    "error": {}
+                },
+                {
+                    "name": "review rating",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "review overall",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "c10cbd3d-059c-4a45-9f69-39a741460b04",
+                            "code": "REV_RT_O",
+                            "required": false,
+                            "error": {}
+                        },
+                        {
+                            "name": "review seat comfort",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "8d9f8d2c-60ab-4f3e-857a-ace9446d9eec",
+                            "code": "REV_RT_SC",
+                            "required": false,
+                            "error": {}
+                        },
+                        {
+                            "name": "review cabin staff service",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "aaf74e10-9504-4042-a7f7-8e6e7e1b5cfc",
+                            "code": "REV_RT_CSS",
+                            "required": false,
+                            "error": {}
+                        },
+                        {
+                            "name": "review food beverage",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "d30010fe-6a3a-4cee-bc90-3927386608e5",
+                            "code": "REV_RT_FB",
+                            "required": false,
+                            "error": {}
+                        },
+                        {
+                            "name": "review ground service",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "e9ffad8a-538a-4696-b49c-c1fc3f383df2",
+                            "code": "REV_RT_GS",
+                            "required": false,
+                            "error": {}
+                        },
+                        {
+                            "name": "review inflight entertainment",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "7ad5fee2-8a18-40b4-9d7c-3dd572d1af31",
+                            "code": "REV_RT_IE",
+                            "required": false,
+                            "error": {}
+                        },
+                        {
+                            "name": "review wifi connectivity",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "10d06aa6-6884-41f5-813b-17189f826de8",
+                            "code": "REV_RT_WC",
+                            "required": false,
+                            "error": {}
+                        },
+                        {
+                            "name": "review value for money",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "cb8cd20e-aae6-4e00-8f8d-a73ae9f67cd6",
+                            "code": "REV_RT_VFM",
+                            "required": false,
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "b47e8ee4-f8c1-4f3e-9d3b-dc8a09742e70",
+                    "code": "REV_RT",
+                    "required": false,
+                    "error": {}
+                },
+                {
+                    "name": "review passenger id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "c8e4f35b-d842-4cc2-8bcb-bdc0f2529f64",
+                    "code": "REV_PSG_ID",
+                    "foreignCollection": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                    "foreignField": [
+                        "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                        "abaae72b-b600-4090-bbc1-cab2a13bc9ab"
+                    ],
+                    "parentRelationship": "ae78665a-fa1e-489c-a75a-f3383d24a581",
+                    "required": false,
+                    "minLength": 8,
+                    "maxLength": 8,
+                    "error": {}
+                },
+                {
+                    "name": "review flight tag",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "review flight airline iata code",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "b9c8b6f4-f363-4bf3-81f6-1ac3192d9ef1",
+                            "code": "REV_FLT_ARL_IATA",
+                            "required": false,
+                            "minLength": 2,
+                            "maxLength": 2,
+                            "error": {}
+                        },
+                        {
+                            "name": "review flight route",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "2f1a06a7-ac9d-4a31-9c1c-1d5eae2a00bb",
+                            "code": "REV_FLT_ROUTE",
+                            "required": false,
+                            "minLength": 0,
+                            "maxLength": 256,
+                            "error": {}
+                        },
+                        {
+                            "name": "review flight date",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "date",
+                            "primaryKey": false,
+                            "GUID": "f3453758-1a7c-4a54-a8ed-b5eeab494ea8",
+                            "code": "REV_FLT_DATE",
+                            "required": false,
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "ab6d4f45-d1f2-455c-ba83-0e4ad829d556",
+                    "code": "REV_FLT_TAG",
+                    "foreignCollection": "214fb2fd-d34e-48be-88be-2296b0113f42",
+                    "foreignField": [
+                        "214fb2fd-d34e-48be-88be-2296b0113f42",
+                        "d2baf92d-d7ea-423c-9e53-9049ef5e26a4"
+                    ],
+                    "parentRelationship": "6617e32f-2975-45b4-af71-a0593cdd4e4c",
+                    "required": false,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "c895c0b8-86f2-4715-bb26-d58842d50174"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "45087367-8136-4936-bada-e5eab3a546a2",
+            "bucketId": "f4a0c9ce-c864-490f-8141-93fed5877458",
+            "code": "REVIEW",
+            "hackoladeMeta": {
+                "namingConvention": ""
+            }
+        },
+        {
+            "collectionName": "passenger",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "passenger id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "abaae72b-b600-4090-bbc1-cab2a13bc9ab",
+                    "code": "PSG_ID",
+                    "primaryKey": false,
+                    "required": false,
+                    "childRelationships": [
+                        "ae78665a-fa1e-489c-a75a-f3383d24a581"
+                    ],
+                    "minLength": 8,
+                    "maxLength": 8,
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "boolean",
+                    "GUID": "b9963b10-dfa8-4d0b-b576-68d3f4565ff2",
+                    "name": "passenger verified",
+                    "code": "PSG_VERIFIED",
+                    "required": false,
+                    "error": {}
+                },
+                {
+                    "name": "passenger age",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "61924c5e-94b0-4003-acc7-14b7a033aaca",
+                    "code": "PSG_AGE",
+                    "required": false,
+                    "error": {}
+                },
+                {
+                    "name": "passenger gender",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "69238fc3-ea79-4c36-bbbc-5f1d0f652f24",
+                    "code": "PSG_GENDER",
+                    "required": false,
+                    "minLength": 4,
+                    "maxLength": 6,
+                    "enum": [
+                        "MALE",
+                        "FEMALE"
+                    ],
+                    "error": {}
+                },
+                {
+                    "name": "passenger type of traveler",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "e35f28c5-28c8-43cd-afb7-86482373ed1f",
+                    "code": "PSG_TYPE",
+                    "required": false,
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "error": {}
+                },
+                {
+                    "name": "passenger seat type",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "78dafdbd-9759-4fa8-ab34-920b0bbee7b7",
+                    "code": "PSG_SEAT_TYPE",
+                    "required": false,
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "error": {}
+                },
+                {
+                    "name": "passenger flight tag",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "passenger flight airline iata code",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "9ad284e6-c034-48fe-973b-4a76576a35bb",
+                            "code": "PSG_FLT_ARL_IATA",
+                            "required": false,
+                            "minLength": 2,
+                            "maxLength": 2,
+                            "error": {}
+                        },
+                        {
+                            "name": "passenger flight route",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "de8dd322-40c1-4b16-b24a-1a953f98a8a9",
+                            "code": "PSG_FLT_ROUTE",
+                            "required": false,
+                            "minLength": 0,
+                            "maxLength": 256,
+                            "error": {}
+                        },
+                        {
+                            "name": "passenger flight date",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "date",
+                            "primaryKey": false,
+                            "GUID": "a463bf0b-7aed-4c3d-b1db-7cbf45ccbcb1",
+                            "code": "PSG_FLT_DATE",
+                            "required": false,
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "56346b73-d015-4c2e-bc82-66b3268c626b",
+                    "code": "PSG_FLT_TAG",
+                    "foreignCollection": "214fb2fd-d34e-48be-88be-2296b0113f42",
+                    "foreignField": [
+                        "214fb2fd-d34e-48be-88be-2296b0113f42",
+                        "d2baf92d-d7ea-423c-9e53-9049ef5e26a4"
+                    ],
+                    "parentRelationship": "090af4b2-68cb-42fd-a51a-26ae792c10ef",
+                    "required": false,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "3608a2f3-d055-4ff6-a6b2-332e7697e504"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+            "bucketId": "f4a0c9ce-c864-490f-8141-93fed5877458",
+            "code": "PASSENGER"
+        },
+        {
+            "collectionName": "flight",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "flight tag",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "flight airline iata code",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "9f91e176-e92f-4952-bf63-449f33a1e84d",
+                            "required": false,
+                            "code": "FLT_ARL_IATA",
+                            "foreignCollection": "aec136b3-ca22-414e-95b1-966a24f70089",
+                            "foreignField": [
+                                "aec136b3-ca22-414e-95b1-966a24f70089",
+                                "fbc75000-ae9c-457f-ab5c-c3336de0cb77"
+                            ],
+                            "parentRelationship": "fd88199c-5b99-4f76-9c1b-56254643f49b",
+                            "minLength": 2,
+                            "maxLength": 2,
+                            "error": {}
+                        },
+                        {
+                            "name": "flight route",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "c340df22-d0ce-46a0-a3c7-c2047548b8b6",
+                            "required": false,
+                            "code": "FLT_ROUTE",
+                            "minLength": 0,
+                            "maxLength": 256,
+                            "error": {}
+                        },
+                        {
+                            "name": "flight date",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "date",
+                            "primaryKey": false,
+                            "GUID": "c0db4f58-af2e-40e3-b4f4-63b65f9a4b75",
+                            "required": false,
+                            "code": "FLT_DATE",
+                            "error": {}
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "GUID": "d2baf92d-d7ea-423c-9e53-9049ef5e26a4",
+                    "code": "FLT_TAG",
+                    "required": false,
+                    "primaryKey": false,
+                    "childRelationships": [
+                        "090af4b2-68cb-42fd-a51a-26ae792c10ef",
+                        "6617e32f-2975-45b4-af71-a0593cdd4e4c"
+                    ],
+                    "error": {}
+                },
+                {
+                    "name": "flight aircraft",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "b1a237c2-503b-474b-86b2-a10a95004352",
+                    "code": "FLT_AIRCRAFT",
+                    "required": false,
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "226d7d67-86d3-4210-92d6-cd28deaa1565"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "214fb2fd-d34e-48be-88be-2296b0113f42",
+            "bucketId": "f4a0c9ce-c864-490f-8141-93fed5877458",
+            "code": "FLIGHT"
+        },
+        {
+            "collectionName": "airline",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "airline iata code",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "fbc75000-ae9c-457f-ab5c-c3336de0cb77",
+                    "code": "ARL_IATA",
+                    "required": false,
+                    "primaryKey": false,
+                    "childRelationships": [
+                        "fd88199c-5b99-4f76-9c1b-56254643f49b"
+                    ],
+                    "minLength": 2,
+                    "maxLength": 2,
+                    "error": {}
+                },
+                {
+                    "name": "airline icao code",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "c1608cf1-1aaf-40cf-84f5-65cc79ca9653",
+                    "code": "ARL_ICAO",
+                    "minLength": 3,
+                    "maxLength": 3,
+                    "required": false,
+                    "error": {}
+                },
+                {
+                    "name": "airline name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "7e97ed4b-5a66-412e-9047-a4fc299ff3fe",
+                    "code": "ARL_NAME",
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "required": false,
+                    "error": {}
+                },
+                {
+                    "name": "airline headquarter nation",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "code": "ARL_HQ_NATION",
+                    "required": false,
+                    "GUID": "5f3dcca9-26ec-41b5-a01a-003492ee0a96",
+                    "minLength": 0,
+                    "maxLength": 256,
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "fb9b31f1-e416-4100-a71d-b34170cd2fa4"
+            },
+            "isActivated": true,
+            "additionalProperties": true,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "aec136b3-ca22-414e-95b1-966a24f70089",
+            "bucketId": "f4a0c9ce-c864-490f-8141-93fed5877458",
+            "code": "AIRLINE",
+            "error": {}
+        }
+    ],
+    "buckets": [
+        {
+            "name": "airline reviews database",
+            "type": "bucket",
+            "collectionIds": [
+                "45087367-8136-4936-bada-e5eab3a546a2",
+                "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                "214fb2fd-d34e-48be-88be-2296b0113f42",
+                "aec136b3-ca22-414e-95b1-966a24f70089"
+            ],
+            "backgroundColor": {
+                "r": 0,
+                "g": 138,
+                "b": 0,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "f4a0c9ce-c864-490f-8141-93fed5877458",
+            "hackoladeMeta": {
+                "namingConvention": ""
+            },
+            "code": "AIRLINEREVIEWS_DB"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "conducted",
+            "relationshipType": "",
+            "parentField": [
+                [
+                    "aec136b3-ca22-414e-95b1-966a24f70089",
+                    "fbc75000-ae9c-457f-ab5c-c3336de0cb77"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "214fb2fd-d34e-48be-88be-2296b0113f42",
+                    "d2baf92d-d7ea-423c-9e53-9049ef5e26a4",
+                    "9f91e176-e92f-4952-bf63-449f33a1e84d"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "n",
+            "GUID": "fd88199c-5b99-4f76-9c1b-56254643f49b",
+            "parentCollection": "aec136b3-ca22-414e-95b1-966a24f70089",
+            "childCollection": "214fb2fd-d34e-48be-88be-2296b0113f42",
+            "hackoladeStyles": {
+                "GUID": "47e70fe0-6c6a-4fd9-83a5-de621dfbb0f3",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#fec107",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 713.7613433204568,
+                        "y": 1681.2309917297837
+                    },
+                    {
+                        "x": 713.7613433204568,
+                        "y": 1624.141528021488
+                    },
+                    {
+                        "x": 575.967138731435,
+                        "y": 1624.141528021488
+                    },
+                    {
+                        "x": 575.967138731435,
+                        "y": 1567.0520643131924
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            },
+            "description": "fk FLT.FLT_TAG.FLT_ARL_NAME to ARL.ARL_NAME"
+        },
+        {
+            "name": "served",
+            "relationshipType": "",
+            "parentField": [
+                [
+                    "214fb2fd-d34e-48be-88be-2296b0113f42",
+                    "d2baf92d-d7ea-423c-9e53-9049ef5e26a4"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                    "56346b73-d015-4c2e-bc82-66b3268c626b"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "n",
+            "GUID": "090af4b2-68cb-42fd-a51a-26ae792c10ef",
+            "parentCollection": "214fb2fd-d34e-48be-88be-2296b0113f42",
+            "childCollection": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+            "hackoladeStyles": {
+                "GUID": "a15ffeb5-1a91-41b1-85e6-51fb389bf82d",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#fec107",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1073.3260233624396,
+                        "y": 1722.447152165694
+                    },
+                    {
+                        "x": 959.8770166747815,
+                        "y": 1722.447152165694
+                    },
+                    {
+                        "x": 959.8770166747815,
+                        "y": 1715.7309917297837
+                    },
+                    {
+                        "x": 846.4280099871235,
+                        "y": 1715.7309917297837
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            },
+            "description": "fk PSG.PSG_FLT_TAG to FLT.FLT_TAG"
+        },
+        {
+            "name": "got",
+            "relationshipType": "",
+            "parentField": [
+                [
+                    "214fb2fd-d34e-48be-88be-2296b0113f42",
+                    "d2baf92d-d7ea-423c-9e53-9049ef5e26a4"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "45087367-8136-4936-bada-e5eab3a546a2",
+                    "ab6d4f45-d1f2-455c-ba83-0e4ad829d556"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "n",
+            "GUID": "6617e32f-2975-45b4-af71-a0593cdd4e4c",
+            "parentCollection": "214fb2fd-d34e-48be-88be-2296b0113f42",
+            "childCollection": "45087367-8136-4936-bada-e5eab3a546a2",
+            "hackoladeStyles": {
+                "GUID": "d9f781d3-28f2-4f06-9811-2a7e639af24f",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#fec107",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 939.1397739361133,
+                        "y": 1498.5291704352587
+                    },
+                    {
+                        "x": 939.1397739361133,
+                        "y": 1589.8800810825212
+                    },
+                    {
+                        "x": 746.9280099871235,
+                        "y": 1589.8800810825212
+                    },
+                    {
+                        "x": 746.9280099871235,
+                        "y": 1681.2309917297837
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            },
+            "description": "fk REV.REV_FLT_TAG to FLT.FLT_TAG"
+        },
+        {
+            "name": "posted",
+            "relationshipType": "",
+            "parentField": [
+                [
+                    "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                    "abaae72b-b600-4090-bbc1-cab2a13bc9ab"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "45087367-8136-4936-bada-e5eab3a546a2",
+                    "c8e4f35b-d842-4cc2-8bcb-bdc0f2529f64"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "ae78665a-fa1e-489c-a75a-f3383d24a581",
+            "parentCollection": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+            "childCollection": "45087367-8136-4936-bada-e5eab3a546a2",
+            "hackoladeStyles": {
+                "GUID": "e52a10b6-cc91-42b3-bf0c-3d085453d8a5",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#fec107",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1022.4731072694466,
+                        "y": 1498.5291704352587
+                    },
+                    {
+                        "x": 1022.4731072694466,
+                        "y": 1570.7381613004763
+                    },
+                    {
+                        "x": 1210.3260233624396,
+                        "y": 1570.7381613004763
+                    },
+                    {
+                        "x": 1210.3260233624396,
+                        "y": 1642.947152165694
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "top"
+                ]
+            },
+            "description": "fk REV.REV_PSG_ID to PSG.PSG_ID"
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "f4a0c9ce-c864-490f-8141-93fed5877458": "airline reviews database",
+        "45087367-8136-4936-bada-e5eab3a546a2": "review",
+        "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4": "passenger",
+        "214fb2fd-d34e-48be-88be-2296b0113f42": "flight",
+        "aec136b3-ca22-414e-95b1-966a24f70089": "airline",
+        "abaae72b-b600-4090-bbc1-cab2a13bc9ab": "passenger id",
+        "61924c5e-94b0-4003-acc7-14b7a033aaca": "passenger age",
+        "e35f28c5-28c8-43cd-afb7-86482373ed1f": "passenger type of traveler",
+        "78dafdbd-9759-4fa8-ab34-920b0bbee7b7": "passenger seat type",
+        "56346b73-d015-4c2e-bc82-66b3268c626b": "passenger flight tag",
+        "9ad284e6-c034-48fe-973b-4a76576a35bb": "passenger flight airline iata code",
+        "de8dd322-40c1-4b16-b24a-1a953f98a8a9": "passenger flight route",
+        "a463bf0b-7aed-4c3d-b1db-7cbf45ccbcb1": "passenger flight date",
+        "fbc75000-ae9c-457f-ab5c-c3336de0cb77": "airline iata code",
+        "5f3dcca9-26ec-41b5-a01a-003492ee0a96": "airline headquarter nation",
+        "d2baf92d-d7ea-423c-9e53-9049ef5e26a4": "flight tag",
+        "9f91e176-e92f-4952-bf63-449f33a1e84d": "flight airline iata code",
+        "c340df22-d0ce-46a0-a3c7-c2047548b8b6": "flight route",
+        "c0db4f58-af2e-40e3-b4f4-63b65f9a4b75": "flight date",
+        "fd88199c-5b99-4f76-9c1b-56254643f49b": "conducted",
+        "b1a237c2-503b-474b-86b2-a10a95004352": "flight aircraft",
+        "090af4b2-68cb-42fd-a51a-26ae792c10ef": "served",
+        "160a877e-4270-444c-bc67-b328c3c26b0f": "review id",
+        "5bae57d4-35db-4f0e-89d9-1d9ea4aa2b27": "review title",
+        "0ff31020-acd5-460c-96fb-d7d0ba7f0963": "review content",
+        "b47e8ee4-f8c1-4f3e-9d3b-dc8a09742e70": "review rating",
+        "c10cbd3d-059c-4a45-9f69-39a741460b04": "review overall",
+        "c8e4f35b-d842-4cc2-8bcb-bdc0f2529f64": "review passenger id",
+        "ae78665a-fa1e-489c-a75a-f3383d24a581": "posted",
+        "ab6d4f45-d1f2-455c-ba83-0e4ad829d556": "review flight tag",
+        "b9c8b6f4-f363-4bf3-81f6-1ac3192d9ef1": "review flight airline iata code",
+        "2f1a06a7-ac9d-4a31-9c1c-1d5eae2a00bb": "review flight route",
+        "f3453758-1a7c-4a54-a8ed-b5eeab494ea8": "review flight date",
+        "6617e32f-2975-45b4-af71-a0593cdd4e4c": "got",
+        "8d9f8d2c-60ab-4f3e-857a-ace9446d9eec": "review seat comfort",
+        "aaf74e10-9504-4042-a7f7-8e6e7e1b5cfc": "review cabin staff service",
+        "d30010fe-6a3a-4cee-bc90-3927386608e5": "review food beverage",
+        "e9ffad8a-538a-4696-b49c-c1fc3f383df2": "review ground service",
+        "7ad5fee2-8a18-40b4-9d7c-3dd572d1af31": "review inflight entertainment",
+        "10d06aa6-6884-41f5-813b-17189f826de8": "review wifi connectivity",
+        "cb8cd20e-aae6-4e00-8f8d-a73ae9f67cd6": "review value for money",
+        "7e97ed4b-5a66-412e-9047-a4fc299ff3fe": "airline name",
+        "c1608cf1-1aaf-40cf-84f5-65cc79ca9653": "airline icao code",
+        "b9963b10-dfa8-4d0b-b576-68d3f4565ff2": "passenger verified",
+        "69238fc3-ea79-4c36-bbbc-5f1d0f652f24": "passenger gender",
+        "7f01c950-9bd1-4125-9532-143b7b4ecb86": "review recommended",
+        "7a589a9d-6f2e-4e2e-8a6c-4aeecefed5ee": "review date"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "1ba3e7d8-c4ad-4448-a2c8-babe51f8a22b"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "a0496d6c-f425-4feb-967d-3ee19987af55"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "772fc7e4-c6a5-43ed-9df1-a9cd58892d8c"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v6.0",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2023-09-10T02:17:10.515Z",
+    "GUID": "fe6b6779-abe8-496a-b4c4-37c0e0a35ffc",
+    "isLineageEnabled": false,
+    "lastModifTS": "2023-09-13T10:43:32.214Z",
+    "persistenceSchemaVersion": "6",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "6.10.19"
+    },
+    "hackoladeMeta": {},
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "45087367-8136-4936-bada-e5eab3a546a2",
+                        "x": 855.80644060278,
+                        "y": 1321.5291704352587,
+                        "width": 250,
+                        "height": 177,
+                        "color": {
+                            "hex": "#a4c400"
+                        }
+                    },
+                    {
+                        "GUID": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4",
+                        "x": 1073.3260233624396,
+                        "y": 1642.947152165694,
+                        "width": 274,
+                        "height": 159,
+                        "color": {
+                            "hex": "#a4c400"
+                        }
+                    },
+                    {
+                        "GUID": "214fb2fd-d34e-48be-88be-2296b0113f42",
+                        "x": 647.4280099871235,
+                        "y": 1681.2309917297837,
+                        "width": 199,
+                        "height": 69,
+                        "color": {
+                            "hex": "#a4c400"
+                        }
+                    },
+                    {
+                        "GUID": "aec136b3-ca22-414e-95b1-966a24f70089",
+                        "x": 443.46713873143506,
+                        "y": 1462.0520643131924,
+                        "width": 265,
+                        "height": 105,
+                        "color": {
+                            "hex": "#a4c400"
+                        }
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 403.46713873143506,
+                        "y": 1281.5291704352587,
+                        "GUID": "f4a0c9ce-c864-490f-8141-93fed5877458"
+                    }
+                ],
+                "collapsedNodes": [
+                    "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a456346b73-d015-4c2e-bc82-66b3268c626b",
+                    "214fb2fd-d34e-48be-88be-2296b0113f42d2baf92d-d7ea-423c-9e53-9049ef5e26a4",
+                    "45087367-8136-4936-bada-e5eab3a546a2ab6d4f45-d1f2-455c-ba83-0e4ad829d556",
+                    "45087367-8136-4936-bada-e5eab3a546a2b47e8ee4-f8c1-4f3e-9d3b-dc8a09742e70"
+                ],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": true,
+                        "autoHeight": true,
+                        "GUID": "6a3c60d6-e1f9-4dbe-a055-8fe5e4e7a6a4"
+                    },
+                    {
+                        "autoWidth": true,
+                        "autoHeight": true,
+                        "GUID": "45087367-8136-4936-bada-e5eab3a546a2"
+                    },
+                    {
+                        "autoWidth": true,
+                        "autoHeight": true,
+                        "GUID": "214fb2fd-d34e-48be-88be-2296b0113f42"
+                    },
+                    {
+                        "autoWidth": true,
+                        "autoHeight": true,
+                        "GUID": "aec136b3-ca22-414e-95b1-966a24f70089"
+                    }
+                ],
+                "relationshipUpdateDisabled": false,
+                "displayOptions": {
+                    "hideErdRelationshipsNames": false
+                }
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
