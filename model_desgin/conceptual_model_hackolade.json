@@ -100,7 +100,7 @@
                             "error": {}
                         },
                         {
-                            "name": "review food beverage",
+                            "name": "review food & beverage",
                             "hackoladeMeta": {},
                             "isActivated": true,
                             "type": "numeric",
@@ -130,7 +130,7 @@
                             "error": {}
                         },
                         {
-                            "name": "review wifi connectivity",
+                            "name": "review Wi-Fi connectivity",
                             "hackoladeMeta": {},
                             "isActivated": true,
                             "type": "numeric",
@@ -866,10 +866,10 @@
         "6617e32f-2975-45b4-af71-a0593cdd4e4c": "got",
         "8d9f8d2c-60ab-4f3e-857a-ace9446d9eec": "review seat comfort",
         "aaf74e10-9504-4042-a7f7-8e6e7e1b5cfc": "review cabin staff service",
-        "d30010fe-6a3a-4cee-bc90-3927386608e5": "review food beverage",
+        "d30010fe-6a3a-4cee-bc90-3927386608e5": "review food & beverage",
         "e9ffad8a-538a-4696-b49c-c1fc3f383df2": "review ground service",
         "7ad5fee2-8a18-40b4-9d7c-3dd572d1af31": "review inflight entertainment",
-        "10d06aa6-6884-41f5-813b-17189f826de8": "review wifi connectivity",
+        "10d06aa6-6884-41f5-813b-17189f826de8": "review Wi-Fi connectivity",
         "cb8cd20e-aae6-4e00-8f8d-a73ae9f67cd6": "review value for money",
         "7e97ed4b-5a66-412e-9047-a4fc299ff3fe": "airline name",
         "c1608cf1-1aaf-40cf-84f5-65cc79ca9653": "airline icao code",
@@ -901,7 +901,7 @@
     "creationTS": "2023-09-10T02:17:10.515Z",
     "GUID": "fe6b6779-abe8-496a-b4c4-37c0e0a35ffc",
     "isLineageEnabled": false,
-    "lastModifTS": "2023-09-13T10:43:32.214Z",
+    "lastModifTS": "2023-09-14T04:38:41.715Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
