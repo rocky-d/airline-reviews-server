@@ -98,6 +98,7 @@ def generate_word_cloud(text: str, path: str, width: int = 1920, height: int = 1
     wordcloud = WordCloud(width = width, height = height, background_color = bc)
     wordcloud.generate_from_frequencies(filtered_word_freq)
 
+    print(path)
     # 保存词云图像到当前目录
     wordcloud.to_file(path)
 
