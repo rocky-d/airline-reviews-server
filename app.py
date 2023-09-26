@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
+from redis import StrictRedis
 
 import p
+from utils import *
 
 app = Flask(__name__)
+rc = StrictRedis(connection_pool = get_rp())
 
 
 @app.route('/', methods = ['POST', 'GET'])
