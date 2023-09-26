@@ -1,28 +1,23 @@
-from flask import Flask, render_template, request
-
-import p
+from flask import Flask, render_template, jsonify
+import redis
 
 app = Flask(__name__)
 
 
-@app.route('/', methods = ['POST', 'GET'])
+@app.route('/connect', methods=['GET'])
+def connect_redis():
+    try:
+        r = redis.Redis(host='192.168.0.115', port=6379, db=0)
+        r.ping()
+        return jsonify({'status': 'success', 'message': 'Connected to Redis successfully!'})
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)})
+
+
+@app.route('/')
 def index():
-    if request.method == 'POST':
-        param1 = request.form.get('param1')
-        param2 = request.form.get('param2')
-        param3 = request.form.get('param3')
-        param4 = request.form.get('param4')
-        param5 = request.form.get('param5')
-        param6 = request.form.get('param6')
-        param7 = request.form.get('param7')
-        param8 = request.form.get('param8')
-        param9 = request.form.get('param9')
-
-        return render_template('index.html', result = p.image_data)
-
-    else:
-        return render_template('index.html', result = 'waiting')
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

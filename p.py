@@ -10,7 +10,5 @@ y = [10, 20, 25, 30, 35]
 sns.lineplot(x = x, y = y)
 
 # 保存图像到当前目录
-plt.savefig(r'archive/line_plot.png')
+plt.savefig(r'static/line_plot.png')
 
-# 读取图像到变量
-image_data = Image.open(r'archive/line_plot.png')
