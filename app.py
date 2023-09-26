@@ -1,6 +1,14 @@
 from flask import Flask, render_template, request
-
+import os, random
 from utils import *
+
+
+def random_background_picture(exception_pic: str | None = None) -> str:
+    pic_ls = [f for f in os.listdir(r'static/background_picture')]
+    if exception_pic:
+        pic_ls.remove(exception_pic)
+    return random.choice(pic_ls)
+
 
 app = Flask(__name__)
 rc = StrictRedis(connection_pool = get_rp())
@@ -13,7 +21,8 @@ result = {
     'input_text4': '',
     'input_text5': '',
     'input_text6': '',
-    'word_cloud_title': ''
+    'word_cloud_title': '',
+    'background_picture': f'static/background_picture/{random_background_picture()}'
 }
 image_path = "static/white.png"
 
