@@ -1,42 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>显示图片</title>
+    <title>Flask Text and Image Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
-<h1>输入9个参数并显示图片</h1>
-
-<form id="imageForm">
-    <label for="param1">param1:</label>
-    <input type="text" id="param1" name="param1"><br>
-
-    <label for="param2">param2:</label>
-    <input type="text" id="param2" name="param2"><br>
-
-    <label for="param3">param3:</label>
-    <input type="text" id="param3" name="param3"><br>
-
-    <label for="param4">param4:</label>
-    <input type="text" id="param4" name="param4"><br>
-
-    <label for="param5">param5:</label>
-    <input type="text" id="param5" name="param5"><br>
-
-    <label for="param6">param6:</label>
-    <input type="text" id="param6" name="param6"><br>
-
-    <label for="param7">param7:</label>
-    <input type="text" id="param7" name="param7"><br>
-
-    <label for="param8">param8:</label>
-    <input type="text" id="param8" name="param8"><br>
-
-    <label for="param9">param9:</label>
-    <input type="text" id="param9" name="param9"><br>
-
-    <input type="button" value="显示图片">
-</form>
-    <p><img src="/static/line_plot.png"></p>
+<div id="container">
+    <h1>输入信息并查看图片</h1>
+    <form action="/process" method="post">
+        <label for="input_text1">文本框1：</label>
+        <input type="text" id="input_text1" name="input_text1">
+        <label for="input_text2">文本框2：</label>
+        <input type="text" id="input_text2" name="input_text2">
+        <label for="input_text3">文本框3：</label>
+        <input type="text" id="input_text3" name="input_text3">
+        <label for="input_text4">文本框4：</label>
+        <input type="text" id="input_text4" name="input_text4">
+        <label for="input_text5">文本框5：</label>
+        <input type="text" id="input_text5" name="input_text5">
+        <label for="input_text6">文本框6：</label>
+        <input type="text" id="input_text6" name="input_text6">
+        <input type="submit" value="确认">
+    </form>
+    <br>
+    <div id="result">
+        {% if result %}
+            <p>文本框1：{{ result['input_text1'] }}</p>
+            <p>文本框2：{{ result['input_text2'] }}</p>
+            <p>文本框3：{{ result['input_text3'] }}</p>
+            <p>文本框4：{{ result['input_text4'] }}</p>
+            <p>文本框5：{{ result['input_text5'] }}</p>
+            <p>文本框6：{{ result['input_text6'] }}</p>
+            <img src="{{ image_path }}" alt="Image">
+        {% endif %}
+    </div>
+</div>
 </body>
 </html>
