@@ -62,7 +62,7 @@ def get_reviews_for_airline(redis_client: Redis, airl_name: str) -> str:
             .strip())
 
 
-def generate_word_cloud(text: str, path: str, width: int = 1920, height: int = 1080, bc: str = 'white') -> None:
+def generate_word_cloud(text: str, path: str, width: str = 1920, height: str = 1080, bc: str = 'white') -> None:
     # 假设你有一个大的字符串变量 text
     # 这里简单地使用空格来拆分文本为单词，你可以根据需要进行更复杂的文本处理
     words = text.lower().split()  # 将文本拆分成单词列表
@@ -87,21 +87,37 @@ def generate_word_cloud(text: str, path: str, width: int = 1920, height: int = 1
         'our', 'very', 'my', 'me', 'too', 'if', 'didn', 'did', 'a', 'b', 'c',
         'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
         'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'his', 'her', 'mine', 'its',
-        'about', 'some', 'thing', 'because', 'been', 'being', 'don'
+        'about', 'some', 'thing', 'because', 'been', 'being', 'don', 'ife', 'them'
     ]  # 添加更多你认为不需要包含在词云中的单词
 
     # 移除无关紧要的单词
     filtered_word_freq = {word: freq for word, freq in word_freq.items()
                           if word not in common_words_to_exclude}
 
+    try:
+        width = int(width)
+    except Exception as e:
+        print(e)
+        width = 1920
+    try:
+        height = int(height)
+    except Exception as e:
+        print(e)
+        height = 1080
+    try:
+        bc = bc.upper()
+        if bc not in ['WHITE', 'BLACK', 'YELLOW', 'RED', 'GREEN', 'BLUE', 'PINK']:
+            raise Exception
+    except Exception as e:
+        print(e)
+        bc = 'WHITE'
+
     # 创建一个WordCloud对象并生成词云图像
     wordcloud = WordCloud(width = width, height = height, background_color = bc)
     wordcloud.generate_from_frequencies(filtered_word_freq)
 
-    print(path)
     # 保存词云图像到当前目录
     wordcloud.to_file(path)
-
     print('wordcloud.png saved')
 
 

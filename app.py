@@ -26,9 +26,8 @@ def index():
 # 处理表单提交
 @app.route('/process', methods = ['POST'])
 def process():
-    global image_path
-    global result  # 使用全局变量
-    # 获取用户输入的信息
+    global image_path, result
+
     result['input_text1'] = request.form['input_text1']
     result['input_text2'] = request.form['input_text2']
     result['input_text3'] = request.form['input_text3']
@@ -41,9 +40,18 @@ def process():
                 f'{request.form["input_text3"]}x{request.form["input_text4"]}_'
                 f'from{request.form["input_text5"]}_to{request.form["input_text6"]}.png')
     image_path = r'static/' + filename
-    generate_word_cloud(get_reviews_for_airline(rc, request.form["input_text1"]), image_path)
+    generate_word_cloud(
+        text = get_reviews_for_airline(
+            redis_client = rc,
+            airl_name = request.form["input_text1"]),
+        path = image_path,
+        width = request.form["input_text4"],
+        height = request.form["input_text5"],
+        bc = request.form["input_text6"])
 
-    return render_template('index.html', result = result, image_path = image_path)
+    return render_template(template_name_or_list = 'index.html',
+                           result = result,
+                           image_path = image_path)
 
 
 if __name__ == '__main__':
