@@ -12,7 +12,15 @@
         }
 
         h1 {
-            color: #333;
+            color: #060617;
+            font-size: 2.25em;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        p {
+            color: #060617;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 4px #000000;
         }
 
         #container {
@@ -26,18 +34,20 @@
 
         label {
             font-weight: bold;
+            color: #070713;
         }
 
         input[type="text"] {
-            width: 100%;
+            width: 96%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            border: none;
+            border-bottom: 2px solid #0070c9;
             border-radius: 3px;
         }
 
         input[type="submit"] {
-            background-color: #007bff;
+            background-color: #0070c9;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -60,20 +70,29 @@
 </head>
 <body>
 <div id="container">
-    <h1>Please Enter Information >> </h1>
+    <h1>Airline Reviews Visualization</h1>
     <form action="/process" method="post">
-        <label for="input_text1">Airline Name >> </label>
-        <input type="text" id="input_text1" name="input_text1">
-        <label for="input_text2">From >> </label>
-        <input type="text" id="input_text2" name="input_text2">
-        <label for="input_text3">To >> </label>
-        <input type="text" id="input_text3" name="input_text3">
-        <label for="input_text4">Width >> </label>
-        <input type="text" id="input_text4" name="input_text4">
-        <label for="input_text5">Height >> </label>
-        <input type="text" id="input_text5" name="input_text5">
-        <label for="input_text6">BC >> </label>
-        <input type="text" id="input_text6" name="input_text6">
+        <!--para1
+        <label for="input_text1">Airline Name >> </label>-->
+        <input type="text" id="input_text1" name="input_text1" placeholder="Enter Airline Name*">
+        <!--
+        <label for="input_text2">From >> </label>-->
+        <input type="text" id="input_text2" name="input_text2" placeholder="Enter Departure Location">
+        <!--
+        <label for="input_text3">To >> </label>-->
+        <input type="text" id="input_text3" name="input_text3" placeholder="Enter Destination Location">
+        <!--
+        <label for="input_text4">Width >> </label>-->
+        <input type="text" id="input_text4" name="input_text4" placeholder="Enter Width">
+        <!--
+        <label for="input_text5">Height >> </label>-->
+        <input type="text" id="input_text5" name="input_text5" placeholder="Enter Height">
+        <!--
+        <label for="input_text6">BC >> </label>-->
+        <input type="text" id="input_text6" name="input_text6" placeholder="Enter BC">
+        <!---->
+        <br>
+        <br>
         <input type="submit" value="Confirm">
     </form>
     <br>
@@ -86,3 +105,4 @@
 </div>
 </body>
 </html>
+

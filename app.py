@@ -15,7 +15,7 @@ result = {
     'input_text6': '',
     'word_cloud_title': ''
 }
-image_path = "static/white.png"
+image_path = "static/transparentpicture.png"
 
 
 # 首页

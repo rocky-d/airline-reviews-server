@@ -81,7 +81,7 @@ def generate_word_cloud(text: str, path: str, arl_name: str, width: str = 1920, 
     common_words_to_exclude = [
         'the', 'and', 'on', 'in', 'we', 'you', 'he', 'she', 'it', 'they', 'their',
         'is', 'are', 'was', 'were', 'to', 'of', 'for',
-        'with', 'as', 'at', 'by',
+        'with', 'as', 'at', 'by', 'also',
         'this', 'that', 'an', 'a', 'or', 'but', 'from', 'not', 'so', 'just',
         'will', 'can', 'should', 'could', 'would', 'am', 'be', 'have', 'has',
         'had', 'do', 'does', 'did', 'here', 'there', 'now', 'then', 'than',
