@@ -60,31 +60,26 @@
 </head>
 <body>
 <div id="container">
-    <h1>输入信息并查看图片</h1>
+    <h1>Please Enter Information >> </h1>
     <form action="/process" method="post">
-        <label for="input_text1">文本框1：</label>
+        <label for="input_text1">Airline Name >> </label>
         <input type="text" id="input_text1" name="input_text1">
-        <label for="input_text2">文本框2：</label>
+        <label for="input_text2">From >> </label>
         <input type="text" id="input_text2" name="input_text2">
-        <label for="input_text3">文本框3：</label>
+        <label for="input_text3">To >> </label>
         <input type="text" id="input_text3" name="input_text3">
-        <label for="input_text4">文本框4：</label>
+        <label for="input_text4">Width >> </label>
         <input type="text" id="input_text4" name="input_text4">
-        <label for="input_text5">文本框5：</label>
+        <label for="input_text5">Height >> </label>
         <input type="text" id="input_text5" name="input_text5">
-        <label for="input_text6">文本框6：</label>
+        <label for="input_text6">BC >> </label>
         <input type="text" id="input_text6" name="input_text6">
-        <input type="submit" value="确认">
+        <input type="submit" value="Confirm">
     </form>
     <br>
     <div id="result">
         {% if result %}
-            <p>文本框1：{{ result['input_text1'] }}</p>
-            <p>文本框2：{{ result['input_text2'] }}</p>
-            <p>文本框3：{{ result['input_text3'] }}</p>
-            <p>文本框4：{{ result['input_text4'] }}</p>
-            <p>文本框5：{{ result['input_text5'] }}</p>
-            <p>文本框6：{{ result['input_text6'] }}</p>
+            <p> {{ result['word_cloud_title'] }} </p>
             <img src="{{ image_path }}" alt="Image">
         {% endif %}
     </div>

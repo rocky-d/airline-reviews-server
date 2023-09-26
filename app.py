@@ -12,7 +12,8 @@ result = {
     'input_text3': '',
     'input_text4': '',
     'input_text5': '',
-    'input_text6': ''
+    'input_text6': '',
+    'word_cloud_title': ''
 }
 image_path = "static/white.png"
 
@@ -40,11 +41,12 @@ def process():
                 f'{request.form["input_text3"]}x{request.form["input_text4"]}_'
                 f'from{request.form["input_text5"]}_to{request.form["input_text6"]}.png')
     image_path = r'static/' + 'temp_word_cloud.png'
-    generate_word_cloud(
+    result['word_cloud_title'] = generate_word_cloud(
         text = get_reviews_for_airline(
             redis_client = rc,
-            airl_name = request.form["input_text1"]),
+            arl_name = request.form["input_text1"]),
         path = image_path,
+        arl_name = request.form["input_text1"],
         width = request.form["input_text4"],
         height = request.form["input_text5"],
         bc = request.form["input_text6"])

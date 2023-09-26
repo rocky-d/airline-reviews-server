@@ -30,16 +30,16 @@ def update_redis_list(redis_client: Redis, list_key: str, new_list: list[str]) -
         redis_client.rpush(list_key, row)
 
 
-def get_reviews_for_airline(redis_client: Redis, airl_name: str) -> str:
+def get_reviews_for_airline(redis_client: Redis, arl_name: str) -> str:
     res = ''
 
-    airl_name = airl_name.lower()
+    arl_name = arl_name.lower()
     df = pd.read_csv(r'data_csv/AIRLINEREVIEWS_DB/AIRLINE.csv')
     # for arl_json in iter_redis_list(redis_client, 'AIRLINE'):
     #     arl_dict = json.loads(arl_json)
     for index, row in df.iterrows():
         arl_dict = row.to_dict()
-        if airl_name == arl_dict['ARL_NAME'].lower():
+        if arl_name == arl_dict['ARL_NAME'].lower():
             airl_iata = arl_dict['ARL_IATA']
             break
     else:
@@ -62,7 +62,8 @@ def get_reviews_for_airline(redis_client: Redis, airl_name: str) -> str:
             .strip())
 
 
-def generate_word_cloud(text: str, path: str, width: str = 1920, height: str = 1080, bc: str = 'white') -> None:
+def generate_word_cloud(text: str, path: str, arl_name: str, width: str = 1920, height: str = 1080,
+                        bc: str = 'white') -> str:
     # 假设你有一个大的字符串变量 text
     # 这里简单地使用空格来拆分文本为单词，你可以根据需要进行更复杂的文本处理
     words = text.lower().split()  # 将文本拆分成单词列表
@@ -119,8 +120,4 @@ def generate_word_cloud(text: str, path: str, width: str = 1920, height: str = 1
     # 保存词云图像到当前目录
     wordcloud.to_file(path)
     print('wordcloud.png saved')
-
-
-if __name__ == '__main__':
-    rc = StrictRedis(connection_pool = get_rp())
-    generate_word_cloud(get_reviews_for_airline(rc, 'air canada'), f'static/wordcloud.png')
+    return f'{bc.lower().title()} Word Cloud of the Reviews for {arl_name.lower().title()}'
