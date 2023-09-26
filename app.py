@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request
-from redis import StrictRedis
 
-import p
 from utils import *
 
 app = Flask(__name__)
@@ -21,8 +19,10 @@ def index():
         param8 = request.form.get('param8')
         param9 = request.form.get('param9')
 
-        return render_template('index.html', result = p.image_data)
-
+        filename = f'{param1}_{param2}_{param3}x{param4}_from{param5}_to{param6}'
+        path = r'static/' + filename
+        generate_word_cloud(get_reviews_for_airline(rc, param1), filename)
+        return render_template('index.html', result = path)
     else:
         return render_template('index.html', result = 'waiting')
 
