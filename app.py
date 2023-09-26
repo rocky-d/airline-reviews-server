@@ -39,7 +39,7 @@ def process():
                 f'{request.form["input_text2"]}_'
                 f'{request.form["input_text3"]}x{request.form["input_text4"]}_'
                 f'from{request.form["input_text5"]}_to{request.form["input_text6"]}.png')
-    image_path = r'static/' + filename
+    image_path = r'static/' + 'temp_word_cloud.png'
     generate_word_cloud(
         text = get_reviews_for_airline(
             redis_client = rc,
