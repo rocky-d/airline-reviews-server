@@ -86,10 +86,11 @@ def generate_word_cloud(text: str, path: str, arl_name: str, width: str = 1920, 
 
     word_freq = {}
     for word in words:
-        if word in KEY_WORDS:
-            word_freq[word] = word_freq.get(word, 0) + 3
-        else:
-            word_freq[word] = word_freq.get(word, 0) + 1
+        # if word in KEY_WORDS:
+        #     word_freq[word] = word_freq.get(word, 0) + 3
+        # else:
+        #     word_freq[word] = word_freq.get(word, 0) + 1
+        word_freq[word] = word_freq.get(word, 0) + (3 if word in KEY_WORDS else 1)
 
     try:
         width = int(width)
