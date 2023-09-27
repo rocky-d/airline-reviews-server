@@ -19,7 +19,7 @@ COMMON_WORDS_TO_EXCLUDE = [
     'what', 'when', 'where', 'who', 'which', 'how', 'go', 'gone', 'going'
 ]  # 添加更多你认为不需要包含在词云中的单词
 KEY_WORDS = ['good', 'bad', 'awesome', 'happy', 'nice', 'worst', 'mad', 'angry', 'best',
-             'cheap', 'expensive', 'high', 'low', 'price']
+             'cheap', 'expensive', 'high', 'low', 'price', 'friendly']
 COLORS = ['WHITE', 'BLACK', 'YELLOW', 'RED', 'GREEN', 'BLUE', 'PINK']
 
 
