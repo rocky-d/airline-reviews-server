@@ -1,6 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Initial Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/4.JPG'); /* 使用项目的 static 目录下的 1.png 作为背景 */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* 垂直居中元素 */
+            height: 100vh; /* 使页面占满整个视口高度 */
+        }
+
+        #pageTitle {
+            color: #fff; /* 白色文字 */
+            font-size: 3.5em;
+            text-shadow: 2px 2px 4px #000; /* 添加阴影效果 */
+            margin-bottom: 300px; /* 增加标题与按钮之间的间距 */
+        }
+
+        #showTargetPageButton {
+            background-color: #0070c9;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #showTargetPageButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1 id="pageTitle">Airline Reviews Word Cloud</h1>
+<div style="text-align: center; margin-top: 100px;">
+    <button id="showTargetPageButton">Start</button>
+</div>
+</body>
+<script>
+    document.getElementById("showTargetPageButton").addEventListener("click", function () {
+        // 创建一个新的div来容纳目标页面的内容
+        var targetPageContent = document.createElement("div");
+
+        // 将目标页面的HTML代码添加到新创建的div中
+        targetPageContent.innerHTML = `
+                <!-- 这里插入您提供的目标页面HTML代码 -->
+<!DOCTYPE html>
+<html>
+<head>
     <title>Flask Text and Image Viewer</title>
     <style>
         body {
@@ -79,27 +138,26 @@
 <div id="container">
     <h1>Airline Reviews Visualization</h1>
     <form action="/process" method="post">
-        <!--para1
-        <label for="input_text1">Airline Name >> </label>-->
-        <input type="text" id="input_text1" name="input_text1" placeholder="Enter Airline Name *">
-        <!--
-        <label for="input_text2">From >> </label>-->
-        <input type="text" id="input_text2" name="input_text2" placeholder="Enter Departure Location">
-        <!--
-        <label for="input_text3">To >> </label>-->
-        <input type="text" id="input_text3" name="input_text3" placeholder="Enter Destination Location">
-        <!--
-        <label for="input_text4">Width >> </label>-->
-        <input type="text" id="input_text4" name="input_text4" placeholder="Enter Width">
-        <!--
-        <label for="input_text5">Height >> </label>-->
-        <input type="text" id="input_text5" name="input_text5" placeholder="Enter Height">
-        <!--
-        <label for="input_text6">BC >> </label>-->
-        <input type="text" id="input_text6" name="input_text6" placeholder="Enter BC">
         <!---->
-        <br>
-        <br>
+        <input type="text" id="input_text1" name="input_text1" placeholder="Enter Airline Name *">
+
+        <!---->
+        <input type="text" id="input_text2" name="input_text2" placeholder="Enter Departure Location">
+
+        <!---->
+        <input type="text" id="input_text3" name="input_text3" placeholder="Enter Destination Location">
+
+        <!---->
+        <input type="text" id="input_text4" name="input_text4" placeholder="Enter Width">
+
+        <!---->
+        <input type="text" id="input_text5" name="input_text5" placeholder="Enter Height">
+
+        <!---->
+        <input type="text" id="input_text6" name="input_text6" placeholder="Enter BC">
+
+        <!---->
+        <br><br>
         <input type="submit" value="Generate">
     </form>
     <div id="result">
@@ -111,4 +169,13 @@
 </div>
 </body>
 </html>
+            `;
 
+        // 清空初始页面的内容
+        document.body.innerHTML = "";
+
+        // 将新创建的div添加到文档中
+        document.body.appendChild(targetPageContent);
+    });
+</script>
+</html>
