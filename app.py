@@ -29,7 +29,7 @@ result = {
     'input_text5': '',
     'input_text6': '',
     'word_cloud_title': '',
-    'background_picture': random_background_picture()
+    'background_picture': random_background_picture('IMG_0233(20230927-092232).JPG')
 }
 image_path = "static/transparentpicture.png"
 
