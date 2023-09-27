@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request
-import os, random
+import os
+import random
 
+from flask import Flask, render_template, request
 from redis import StrictRedis
 
 from utils import *
@@ -25,7 +26,7 @@ result = {
     'input_text5': '',
     'input_text6': '',
     'word_cloud_title': '',
-    'background_picture': f'{random_background_picture()}'
+    'background_picture': random_background_picture()
 }
 image_path = "static/transparentpicture.png"
 
