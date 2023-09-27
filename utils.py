@@ -1,8 +1,26 @@
 from typing import Iterable
 
 import pandas as pd
-from redis import Redis, ConnectionPool, StrictRedis
+from redis import Redis, ConnectionPool
 from wordcloud import WordCloud
+
+# 常见的无关紧要的单词列表
+COMMON_WORDS_TO_EXCLUDE = [
+    'the', 'and', 'on', 'in', 'we', 'you', 'he', 'she', 'it', 'they', 'their',
+    'is', 'are', 'was', 'were', 'to', 'of', 'for',
+    'with', 'as', 'at', 'by', 'also', 'done',
+    'this', 'that', 'an', 'a', 'or', 'but', 'from', 'not', 'so', 'just',
+    'will', 'can', 'should', 'could', 'would', 'am', 'be', 'have', 'has',
+    'had', 'do', 'does', 'did', 'here', 'there', 'now', 'then', 'than',
+    'our', 'very', 'my', 'me', 'too', 'if', 'didn', 'did', 'a', 'b', 'c',
+    'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'his', 'her', 'mine', 'its',
+    'about', 'some', 'thing', 'because', 'been', 'being', 'don', 'ife', 'them',
+    'what', 'when', 'where', 'who', 'which', 'how', 'go', 'gone', 'going'
+]  # 添加更多你认为不需要包含在词云中的单词
+KEY_WORDS = ['good', 'bad', 'awesome', 'happy', 'nice', 'worst', 'mad', 'angry', 'best',
+             'cheap', 'expensive', 'high', 'low', 'price']
+COLORS = ['WHITE', 'BLACK', 'YELLOW', 'RED', 'GREEN', 'BLUE', 'PINK']
 
 
 def get_rp() -> ConnectionPool | None:
@@ -43,7 +61,7 @@ def get_reviews_for_airline(redis_client: Redis, arl_name: str) -> str:
             airl_iata = arl_dict['ARL_IATA']
             break
     else:
-        return 'AIRLINE_NOT_FOUND'
+        return 'airline_not_found'
 
     df = pd.read_csv(r'data_csv/AIRLINEREVIEWS_DB/REVIEW.csv')
     # for rev_json in iter_redis_list(redis_client, 'REVIEW'):
@@ -64,36 +82,14 @@ def get_reviews_for_airline(redis_client: Redis, arl_name: str) -> str:
 
 def generate_word_cloud(text: str, path: str, arl_name: str, width: str = 1920, height: str = 1080,
                         bc: str = 'white') -> str:
-    # 假设你有一个大的字符串变量 text
-    # 这里简单地使用空格来拆分文本为单词，你可以根据需要进行更复杂的文本处理
-    words = text.lower().split()  # 将文本拆分成单词列表
+    words = [word for word in text.lower().split() if word not in COMMON_WORDS_TO_EXCLUDE]
 
-    word_freq = {}  # 用于存储单词频率的字典
-
+    word_freq = {}
     for word in words:
-        # 使用字典来计算单词的频率
-        if word in ['good', 'bad', 'awesome', 'happy', 'nice', 'worst', 'mad', 'angry', 'best']:
-            word_freq[word] = word_freq.get(word, 0) + 5
+        if word in KEY_WORDS:
+            word_freq[word] = word_freq.get(word, 0) + 3
         else:
             word_freq[word] = word_freq.get(word, 0) + 1
-
-    # 常见的无关紧要的单词列表
-    common_words_to_exclude = [
-        'the', 'and', 'on', 'in', 'we', 'you', 'he', 'she', 'it', 'they', 'their',
-        'is', 'are', 'was', 'were', 'to', 'of', 'for',
-        'with', 'as', 'at', 'by', 'also',
-        'this', 'that', 'an', 'a', 'or', 'but', 'from', 'not', 'so', 'just',
-        'will', 'can', 'should', 'could', 'would', 'am', 'be', 'have', 'has',
-        'had', 'do', 'does', 'did', 'here', 'there', 'now', 'then', 'than',
-        'our', 'very', 'my', 'me', 'too', 'if', 'didn', 'did', 'a', 'b', 'c',
-        'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-        'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'his', 'her', 'mine', 'its',
-        'about', 'some', 'thing', 'because', 'been', 'being', 'don', 'ife', 'them'
-    ]  # 添加更多你认为不需要包含在词云中的单词
-
-    # 移除无关紧要的单词
-    filtered_word_freq = {word: freq for word, freq in word_freq.items()
-                          if word not in common_words_to_exclude}
 
     try:
         width = int(width)
@@ -107,7 +103,7 @@ def generate_word_cloud(text: str, path: str, arl_name: str, width: str = 1920, 
         height = 1080
     try:
         bc = bc.upper()
-        if bc not in ['WHITE', 'BLACK', 'YELLOW', 'RED', 'GREEN', 'BLUE', 'PINK']:
+        if bc not in COLORS:
             raise Exception
     except Exception as e:
         print(e)
@@ -115,9 +111,10 @@ def generate_word_cloud(text: str, path: str, arl_name: str, width: str = 1920, 
 
     # 创建一个WordCloud对象并生成词云图像
     wordcloud = WordCloud(width = width, height = height, background_color = bc)
-    wordcloud.generate_from_frequencies(filtered_word_freq)
+    wordcloud.generate_from_frequencies(word_freq)
 
     # 保存词云图像到当前目录
     wordcloud.to_file(path)
     print('wordcloud.png saved')
-    return f'{bc.lower().title()} Word Cloud of the Reviews for {arl_name.lower().title()}'
+
+    return f'Word Cloud of the Reviews for {arl_name.lower().title()}'
