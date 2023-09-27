@@ -45,6 +45,12 @@ def index():
 def process():
     global image_path, result
 
+    filename = (f'{request.form["input_text1"]}_'
+                f'{request.form["input_text2"]}_'
+                f'{request.form["input_text3"]}x{request.form["input_text4"]}_'
+                f'from{request.form["input_text5"]}_to{request.form["input_text6"]}.png')
+    image_path = r'static/' + 'temp_word_cloud.png'
+
     result['input_text1'] = request.form['input_text1']
     result['input_text2'] = request.form['input_text2']
     result['input_text3'] = request.form['input_text3']
@@ -52,13 +58,6 @@ def process():
     result['input_text5'] = request.form['input_text5']
     result['input_text6'] = request.form['input_text6']
     result['background_picture'] = random_background_picture(result['background_picture'])
-
-    filename = (f'{request.form["input_text1"]}_'
-                f'{request.form["input_text2"]}_'
-                f'{request.form["input_text3"]}x{request.form["input_text4"]}_'
-                f'from{request.form["input_text5"]}_to{request.form["input_text6"]}.png')
-    image_path = r'static/' + 'temp_word_cloud.png'
-
     result['word_cloud_title'] = generate_word_cloud(
         text = get_reviews_for_airline(
             redis_client = rc,
