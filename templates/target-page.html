@@ -2,17 +2,57 @@
 <html>
 <head>
     <title>Initial Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/4.JPG'); /* 使用项目的 static 目录下的 1.png 作为背景 */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* 垂直居中元素 */
+            height: 100vh; /* 使页面占满整个视口高度 */
+        }
+
+        #pageTitle {
+            color: #fff; /* 白色文字 */
+            font-size: 3.5em;
+            text-shadow: 2px 2px 4px #000; /* 添加阴影效果 */
+            margin-bottom: 300px; /* 增加标题与按钮之间的间距 */
+        }
+
+        #showTargetPageButton {
+            background-color: #0070c9;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #showTargetPageButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <div style="text-align: center; margin-top: 100px;">
-        <button id="showTargetPageButton">start</button>
-    </div>
-
-    <script>
-        document.getElementById("showTargetPageButton").addEventListener("click", function() {
-            // 当按钮被点击时，重定向到目标页面
-            window.location.href = "http://127.0.0.1:5000/";
-        });
-    </script>
+<h1 id="pageTitle">Airline Reviews Word Cloud</h1>
+<div style="text-align: center; margin-top: 100px;">
+    <button id="showTargetPageButton">Start</button>
+</div>
 </body>
+<script>
+    document.getElementById("showTargetPageButton").addEventListener("click", function () {
+        // 当按钮被点击时，重定向到目标页面
+        window.location.href = "http://127.0.0.1:5000/";
+    });
+</script>
 </html>
