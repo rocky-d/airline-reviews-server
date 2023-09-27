@@ -1,10 +1,13 @@
 import os
 import random
+from datetime import datetime
 
 from flask import Flask, render_template, request
 from redis import StrictRedis
 
 from utils import *
+
+random.seed(datetime.now().timestamp())
 
 
 def random_background_picture(exception_pic: str | None = None) -> str:
