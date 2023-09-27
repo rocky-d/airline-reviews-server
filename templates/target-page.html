@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Initial Page</title>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 100px;">
+        <button id="showTargetPageButton">start</button>
+    </div>
+
+    <script>
+        document.getElementById("showTargetPageButton").addEventListener("click", function() {
+            // 当按钮被点击时，重定向到目标页面
+            window.location.href = "http://127.0.0.1:5000/";
+        });
+    </script>
+</body>
+</html>
