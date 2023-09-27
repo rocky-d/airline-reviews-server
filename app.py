@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
 import os, random
+
+from redis import StrictRedis
+
 from utils import *
 
 
@@ -22,7 +25,7 @@ result = {
     'input_text5': '',
     'input_text6': '',
     'word_cloud_title': '',
-    'background_picture': f'static/background_picture/{random_background_picture()}'
+    'background_picture': f'{random_background_picture()}'
 }
 image_path = "static/transparentpicture.png"
 
@@ -44,6 +47,7 @@ def process():
     result['input_text4'] = request.form['input_text4']
     result['input_text5'] = request.form['input_text5']
     result['input_text6'] = request.form['input_text6']
+    result['background_picture'] = random_background_picture(result['background_picture'])
 
     filename = (f'{request.form["input_text1"]}_'
                 f'{request.form["input_text2"]}_'
