@@ -58,6 +58,7 @@ def process():
                 f'{request.form["input_text3"]}x{request.form["input_text4"]}_'
                 f'from{request.form["input_text5"]}_to{request.form["input_text6"]}.png')
     image_path = r'static/' + 'temp_word_cloud.png'
+
     result['word_cloud_title'] = generate_word_cloud(
         text = get_reviews_for_airline(
             redis_client = rc,
@@ -66,11 +67,14 @@ def process():
         arl_name = request.form["input_text1"],
         width = request.form["input_text4"],
         height = request.form["input_text5"],
-        bc = request.form["input_text6"])
+        bc = request.form["input_text6"]
+    )
 
-    return render_template(template_name_or_list = 'index.html',
-                           result = result,
-                           image_path = image_path)
+    return render_template(
+        template_name_or_list = 'index.html',
+        result = result,
+        image_path = image_path
+    )
 
 
 if __name__ == '__main__':
