@@ -9,6 +9,11 @@
             margin: 0;
             padding: 0;
             text-align: center;
+
+            background-image: url('/static/2.JPG');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         h1 {
@@ -20,7 +25,7 @@
         p {
             color: #060617;
             font-size: 1.5em;
-            text-shadow: 2px 2px 4px #000000;
+
         }
 
         #container {
@@ -38,7 +43,7 @@
         }
 
         input[type="text"] {
-            width: 96%;
+            width: 94%;
             padding: 10px;
             margin-bottom: 10px;
             border: none;
@@ -53,6 +58,8 @@
             border: none;
             border-radius: 3px;
             cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
         }
 
         input[type="submit"]:hover {
@@ -74,7 +81,7 @@
     <form action="/process" method="post">
         <!--para1
         <label for="input_text1">Airline Name >> </label>-->
-        <input type="text" id="input_text1" name="input_text1" placeholder="Enter Airline Name*">
+        <input type="text" id="input_text1" name="input_text1" placeholder="Enter Airline Name *">
         <!--
         <label for="input_text2">From >> </label>-->
         <input type="text" id="input_text2" name="input_text2" placeholder="Enter Departure Location">
@@ -93,12 +100,11 @@
         <!---->
         <br>
         <br>
-        <input type="submit" value="Confirm">
+        <input type="submit" value="Generate">
     </form>
-    <br>
     <div id="result">
         {% if result %}
-            <p> {{ result['word_cloud_title'] }} </p>
+            <strong><p> {{ result['word_cloud_title'] }} </p></strong>
             <img src="{{ image_path }}" alt="Image">
         {% endif %}
     </div>
