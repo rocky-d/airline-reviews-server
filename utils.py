@@ -116,6 +116,6 @@ def generate_word_cloud(text: str, path: str, arl_name: str, width: str = 1920, 
 
     # 保存词云图像到当前目录
     wordcloud.to_file(path)
-    print('wordcloud.png saved')
+    print('temp_word_cloud.png saved')
 
     return f'Word Cloud of the Reviews for {arl_name.lower().title()}'
