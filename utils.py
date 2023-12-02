@@ -1,3 +1,5 @@
+import os
+import random
 from typing import Iterable
 
 import pandas as pd
@@ -21,6 +23,13 @@ COMMON_WORDS_TO_EXCLUDE = [
 KEY_WORDS = ['good', 'bad', 'awesome', 'happy', 'nice', 'worst', 'mad', 'angry', 'best',
              'cheap', 'expensive', 'high', 'low', 'price', 'friendly']
 COLORS = ['WHITE', 'BLACK', 'YELLOW', 'RED', 'GREEN', 'BLUE', 'PINK']
+
+
+def random_background_picture(exception_pic: str | None = None) -> str:
+    pic_ls = [f for f in os.listdir(r'static/background_picture')]
+    if exception_pic:
+        pic_ls.remove(exception_pic)
+    return random.choice(pic_ls)
 
 
 def get_rp() -> ConnectionPool | None:

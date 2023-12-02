@@ -1,5 +1,3 @@
-import os
-import random
 from datetime import datetime
 
 from flask import Flask, render_template, request
@@ -8,14 +6,6 @@ from redis import StrictRedis
 from utils import *
 
 random.seed(datetime.now().timestamp())
-
-
-def random_background_picture(exception_pic: str | None = None) -> str:
-    pic_ls = [f for f in os.listdir(r'static/background_picture')]
-    if exception_pic:
-        pic_ls.remove(exception_pic)
-    return random.choice(pic_ls)
-
 
 app = Flask(__name__)
 rc = StrictRedis(connection_pool = get_rp())
