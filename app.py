@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 from redis import StrictRedis
 
 from utils import *
@@ -64,6 +64,37 @@ def process():
         result = result,
         image_path = image_path
     )
+
+
+@app.route('/android', methods = ['GET'])
+def handle_android():
+    # 图片在服务器的本地路径
+    global image_path
+    image_path = r'static/' + 'temp_word_cloud.png'
+
+    request_body = {key: value for key, value in request.json.items()}
+    # print(request_body)
+    image_title = generate_word_cloud(
+        text = get_reviews_for_airline(redis_client = None, arl_name = request_body['arl_name']),
+        path = image_path,
+        arl_name = request_body['arl_name'],
+        width = request_body['width'],
+        height = request_body['height'],
+        bc = request_body['bc']
+    )
+
+    # 读取图片数据
+    with open(image_path, 'rb') as image_file:
+        image_data = image_file.read()
+
+    # 创建自定义响应
+    response = make_response(image_data)
+
+    # 设置响应头部信息
+    response.headers['Content-Type'] = 'image/png'
+    response.status_code = 200
+
+    return response
 
 
 if __name__ == '__main__':

@@ -57,7 +57,7 @@ def update_redis_list(redis_client: Redis, list_key: str, new_list: list[str]) -
         redis_client.rpush(list_key, row)
 
 
-def get_reviews_for_airline(redis_client: Redis, arl_name: str) -> str:
+def get_reviews_for_airline(redis_client: Redis | None, arl_name: str) -> str:
     res = ''
 
     arl_name = arl_name.lower()
