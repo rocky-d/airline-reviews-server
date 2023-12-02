@@ -1,3 +1,3 @@
-# word-cloud-for-airline-reviews
+# airline-reviews-server
 
 ## Data Modeling and Design
