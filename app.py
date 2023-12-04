@@ -66,7 +66,7 @@ def process():
     )
 
 
-@app.route('/android', methods = ['GET'])
+@app.route('/android', methods = ['POST'])
 def handle_android():
     # 图片在服务器的本地路径
     global image_path
